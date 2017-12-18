@@ -7,7 +7,7 @@
 - 欢迎投稿, 请阅读[投稿指南](CONTRIBUTING.md)。
 - 代码段是在 ES6 中编写的, 请使用[Babel transpiler](https://babeljs.io/)确保向后兼容。
 
-感谢作者分享了大量有用的Javascript片段,你可以在30秒或更少时间中理解。本文为中文版翻译，下面一起来看看有哪些精彩的JavaScript代码值得收藏。
+感谢作者分享了大量有用的Javascript片段,本文为中文版翻译，下面一起来看看有哪些精彩的JavaScript代码值得收藏。
 
 原文：[https://github.com/Chalarangelo/30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code)
 
@@ -19,9 +19,9 @@
 
 本文翻译为前端开发博客所有，如有需要转载，请详细注明以上信息。
 
-## Table of Contents
+## 内容目录
 
-### Array
+### 数组
 * [`arrayMax`](#arraymax)
 * [`arrayMin`](#arraymin)
 * [`chunk`](#chunk)
@@ -58,7 +58,7 @@
 * [`without`](#without)
 * [`zip`](#zip)
 
-### Browser
+### 浏览器
 * [`bottomVisible`](#bottomvisible)
 * [`currentURL`](#currenturl)
 * [`elementIsVisibleInViewport`](#elementisvisibleinviewport)
@@ -67,12 +67,12 @@
 * [`redirect`](#redirect)
 * [`scrollToTop`](#scrolltotop)
 
-### Date
+### 时间
 * [`getDaysDiffBetweenDates`](#getdaysdiffbetweendates)
 * [`JSONToDate`](#jsontodate)
 * [`toEnglishDate`](#toenglishdate)
 
-### Function
+### 函数
 * [`chainAsync`](#chainasync)
 * [`compose`](#compose)
 * [`curry`](#curry)
@@ -82,7 +82,7 @@
 * [`runPromisesInSeries`](#runpromisesinseries)
 * [`sleep`](#sleep)
 
-### Math
+### 数学
 * [`arrayAverage`](#arrayaverage)
 * [`arraySum`](#arraysum)
 * [`collatz`](#collatz)
@@ -104,21 +104,21 @@
 * [`round`](#round)
 * [`standardDeviation`](#standarddeviation)
 
-### Media
+### 媒体
 * [`speechSynthesis`](#speechsynthesis)
 
-### Node
+### 节点
 * [`JSONToFile`](#jsontofile)
 * [`readFileLines`](#readfilelines)
 
-### Object
+### 对象
 * [`cleanObj`](#cleanobj)
 * [`objectFromPairs`](#objectfrompairs)
 * [`objectToPairs`](#objecttopairs)
 * [`shallowClone`](#shallowclone)
 * [`truthCheckCollection`](#truthcheckcollection)
 
-### String
+### 字符串
 * [`anagrams`](#anagrams)
 * [`capitalize`](#capitalize)
 * [`capitalizeEveryWord`](#capitalizeeveryword)
@@ -129,7 +129,7 @@
 * [`toCamelCase`](#tocamelcase)
 * [`truncateString`](#truncatestring)
 
-### Utility
+### 工具
 * [`coalesce`](#coalesce)
 * [`coalesceFactory`](#coalescefactory)
 * [`extendHex`](#extendhex)
@@ -1391,9 +1391,7 @@ acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)
 
 将字符串的第一个字母大写。
 
-使用 destructuring 和`toUpperCase()`可将第一个字母、
-
-`...rest`用于获取第一个字母之后的字符数组, 然后是`Array.join('')`以使其成为字符串。省略`lowerRest`参数以保持字符串的其余部分不变, 或将其设置为`true`以转换为小写。
+使用 destructuring 和`toUpperCase()`可将第一个字母、`...rest`用于获取第一个字母之后的字符数组, 然后是`Array.join('')`以使其成为字符串。省略`lowerRest`参数以保持字符串的其余部分不变, 或将其设置为`true`以转换为小写。
 
 ```js
 const capitalize = ([first,...rest], lowerRest = false) =>
@@ -1567,11 +1565,7 @@ v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLower
 
 将 colorcode 转换为`rgb()`字符串。
 
-使用按位右运算符和掩码位与`&`
-
-(and) 运算符将十六进制颜色代码 (前缀为`#`) 转换为具有 RGB 值的字符串。如果它是一个3位数的 colorcode, 那么用 extendHex () 函数 (ref.
-
-`extendHex`代码段) 扩展的6位 colorcode 进行相同的处理
+使用按位右运算符和掩码位与`&`(and) 运算符将十六进制颜色代码 (前缀为`#`) 转换为具有 RGB 值的字符串。如果它是一个3位数的 colorcode, 那么用 extendHex () 函数 (ref.`extendHex`代码段) 扩展的6位 colorcode 进行相同的处理
 
 ```js
 const hexToRgb = hex => {
@@ -1738,11 +1732,7 @@ const UUIDGenerator = () =>
 
 如果给定的字符串是有效的电子邮件, 则返回`true`, 否则为`false`。
 
-使用正则表达式检查电子邮件是否有效。如果电子邮件有效, 则返回 true, 如果没有, 则`true`
-
-`false`
-
-。
+使用正则表达式检查电子邮件是否有效。如果电子邮件有效, 则返回 true, 如果没有, 则返回`false`。
 
 ```js
 const validateEmail = str =>
@@ -1765,6 +1755,6 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 
 ## Credits
 
-*Icons made by[Smashicons](https://www.flaticon.com/authors/smashicons)from[www.flaticon.com](https://www.flaticon.com/)is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+*Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
 
-再次声明：有需要转载请保留头部信息，有问题可以联系我的微信，caibaojian89
+再次声明：有需要转载请保留头部信息，有问题可以联系我的微信，caibaojian89，或者关注我的微信公众号：前端开发博客
