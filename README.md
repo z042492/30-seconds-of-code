@@ -1,11 +1,23 @@
 ![Logo](/logo.png)
 
 # 30 seconds of code [![Gitter chat](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/30-seconds-of-code/Lobby)
-> Curated collection of useful Javascript snippets that you can understand in 30 seconds or less.
+> 收集有用的 Javascript 片段, 你可以在30秒或更少的时间里理解。
 
-- Use <kbd>Ctrl</kbd> + <kbd>F</kbd> or <kbd>command</kbd> + <kbd>F</kbd> to search for a snippet.
-- Contributions welcome, please read the [contribution guide](CONTRIBUTING.md).
-- Snippets are written in ES6, use the [Babel transpiler](https://babeljs.io/) to ensure backwards-compatibility.
+- 使用<kbd>Ctrl</kbd> + <kbd>F</kbd> 或 <kbd>command</kbd> + <kbd>F</kbd>搜索代码段。
+- 欢迎投稿, 请阅读[投稿指南](CONTRIBUTING.md)。
+- 代码段是在 ES6 中编写的, 请使用[Babel transpiler](https://babeljs.io/)确保向后兼容。
+
+本文来自github上的 30-seconds-of-code 项目，作者分享了大量有用的Javascript片段,你可以在30秒或更少时间中理解。本文为中文版翻译，下面一起来看看有哪些精彩的JavaScript代码值得收藏。
+
+原文：[https://github.com/Chalarangelo/30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code)
+
+作者：[Chalarangelo](https://github.com/Chalarangelo)
+
+翻译：[http://caibaojian.com/30-seconds-of-code.html](http://caibaojian.com/30-seconds-of-code.html)
+
+译者：[蔡宝坚](http://caibaojian.com/)
+
+本文翻译为前端开发博客所有，如有需要转载，请详细注明以上信息。
 
 ## Table of Contents
 
@@ -136,13 +148,16 @@
 * [`validateEmail`](#validateemail)
 * [`validateNumber`](#validatenumber)
 
-## Array
+
+## 数组
+
+[⬆ back to top](#table-of-contents)
 
 ### arrayMax
 
-Returns the maximum value in an array.
+返回数组中的最大值。
 
-Use `Math.max()` combined with the spread operator (`...`) to get the maximum value in the array.
+将`Math.max()`与扩展运算符 (`...`) 结合使用以获取数组中的最大值。
 
 ```js
 const arrayMax = arr => Math.max(...arr);
@@ -153,9 +168,9 @@ const arrayMax = arr => Math.max(...arr);
 
 ### arrayMin
 
-Returns the minimum value in an array.
+返回数组中的最小值。
 
-Use `Math.min()` combined with the spread operator (`...`) to get the minimum value in the array.
+将`Math.min()`与扩展运算符 (`...`) 结合使用以获取数组中的最小值。
 
 ```js
 const arrayMin = arr => Math.min(...arr);
@@ -166,15 +181,13 @@ const arrayMin = arr => Math.min(...arr);
 
 ### chunk
 
-Chunks an array into smaller arrays of a specified size.
+将数组块划分为指定大小的较小数组。
 
-Use `Array.from()` to create a new array, that fits the number of chunks that will be produced.
-Use `Array.slice()` to map each element of the new array to a chunk the length of `size`.
-If the original array can't be split evenly, the final chunk will contain the remaining elements.
+使用`Array.from()`创建新的数组, 这符合将生成的区块数。使用`Array.slice()`将新数组的每个元素映射到`size`长度的区块。如果原始数组不能均匀拆分, 则最终的块将包含剩余的元素。
 
 ```js
 const chunk = (arr, size) =>
-  Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
+Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size, i * size + size));
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
 ```
 
@@ -182,9 +195,13 @@ const chunk = (arr, size) =>
 
 ### compact
 
-Removes falsey values from an array.
+从数组中移除 falsey 值。
 
-Use `Array.filter()` to filter out falsey values (`false`, `null`, `0`, `""`, `undefined`, and `NaN`).
+使用`Array.filter()`筛选出 falsey 值 (`false`、`null`、
+
+`0`、
+
+`""`、`undefined`和`NaN`).
 
 ```js
 const compact = (arr) => arr.filter(Boolean);
@@ -195,9 +212,9 @@ const compact = (arr) => arr.filter(Boolean);
 
 ### countOccurrences
 
-Counts the occurrences of a value in an array.
+计算数组中值的出现次数。
 
-Use `Array.reduce()` to increment a counter each time you encounter the specific value inside the array.
+使用`Array.reduce()`在每次遇到数组中的特定值时递增计数器。
 
 ```js
 const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 1 : a + 0, 0);
@@ -208,11 +225,9 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 
 ### deepFlatten
 
-Deep flattens an array.
+深拼合数组。
 
-Use recursion.
-Use `Array.concat()` with an empty array (`[]`) and the spread operator (`...`) to flatten an array.
-Recursively flatten each element that is an array.
+使用递归。使用`Array.concat()`与空数组 (`[]`) 和跨页运算符 (`...`) 来拼合数组。递归拼合作为数组的每个元素。
 
 ```js
 const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlatten(v) : v));
@@ -223,9 +238,15 @@ const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlat
 
 ### difference
 
-Returns the difference between two arrays.
+返回两个数组之间的差异。
 
-Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values not contained in `b`.
+从`b`创建`Set`
+
+, 然后使用`Array.filter()`
+
+on 只保留`a`
+
+`b`中不包含的值.
 
 ```js
 const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
@@ -236,9 +257,11 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 
 ### distinctValuesOfArray
 
-Returns all the distinct values of an array.
+返回数组的所有不同值。
 
-Use ES6 `Set` and the `...rest` operator to discard all duplicated values.
+使用 ES6
+
+`Set`和`...rest`运算符放弃所有重复的值。
 
 ```js
 const distinctValuesOfArray = arr => [...new Set(arr)];
@@ -249,15 +272,13 @@ const distinctValuesOfArray = arr => [...new Set(arr)];
 
 ### dropElements
 
-Removes elements in an array until the passed function returns `true`. Returns the remaining elements in the array.
-
-Loop through the array, using `Array.shift()` to drop the first element of the array until the returned value from the function is `true`.
-Returns the remaining elements.
+移除数组中的元素, 直到传递的函数返回`true`。返回数组中的其余元素。
+在数组中循环, 使用`Array.shift()`将数组的第一个元素除去, 直到函数的返回值为`true`。返回其余元素。
 
 ```js
 const dropElements = (arr, func) => {
-  while (arr.length > 0 && !func(arr[0])) arr.shift();
-  return arr;
+while (arr.length > 0 && !func(arr[0])) arr.shift();
+return arr;
 };
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
@@ -266,9 +287,9 @@ const dropElements = (arr, func) => {
 
 ### everyNth
 
-Returns every nth element in an array.
+返回数组中的每个第 n 个元素。
 
-Use `Array.filter()` to create a new array that contains every nth element of a given array.
+使用`Array.filter()`创建一个包含给定数组的每个第 n 个元素的新数组。
 
 ```js
 const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
@@ -279,9 +300,11 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
 
 ### filterNonUnique
 
-Filters out the non-unique values in an array.
+筛选出数组中的非唯一值。
 
-Use `Array.filter()` for an array containing only the unique values.
+对于只包含唯一值的数组, 请使用`Array.filter()`
+
+。
 
 ```js
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
@@ -292,9 +315,9 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 
 ### flatten
 
-Flattens an array.
+拼合数组。
 
-Use `Array.reduce()` to get all elements inside the array and `concat()` to flatten them.
+使用`Array.reduce()`获取数组中的所有元素和`concat()`以拼合它们。
 
 ```js
 const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
@@ -305,33 +328,29 @@ const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
 
 ### flattenDepth
 
-Flattens an array up to the specified depth.
+将数组向上拼合到指定深度。
 
-Use recursion, decrementing `depth` by 1 for each level of depth.
-Use `Array.reduce()` and `Array.concat()` to merge elements or arrays.
-Base case, for `depth` equal to `1` stops recursion.
-Omit the second element, `depth` to flatten only to a depth of `1` (single flatten).
+使用递归, 递减`depth`, 每层深度为1。使用`Array.reduce()`和`Array.concat()`来合并元素或数组。基本情况下, 对于等于`1`的`depth`停止递归。省略第二个元素,`depth`仅拼合到`1`的深度 (单个拼合)。
 
 ```js
 const flattenDepth = (arr, depth = 1) =>
-  depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
-  : arr.reduce((a, v) => a.concat(v), []);
+depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, depth - 1) : v), [])
+: arr.reduce((a, v) => a.concat(v), []);
 // flattenDepth([1,[2],[[[3],4],5]], 2) -> [1,2,[3],4,5]
 ```
 
 [⬆ back to top](#table-of-contents)
 
-### groupBy
+### groupby
 
-Groups the element of an array based on the given function.
+根据给定函数对数组元素进行分组。
 
-Use `Array.map()` to map the values of an array to a function or property name.
-Use `Array.reduce()` to create an object, where the keys are produced from the mapped results.
+使用`Array.map()`将数组的值映射到函数或属性名。使用`Array.reduce()`创建一个对象, 其中的键是从映射的结果生成的。
 
 ```js
 const groupBy = (arr, func) =>
-  arr.map(typeof func === 'function' ? func : val => val[func])
-    .reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
+arr.map(typeof func === 'function' ? func : val => val[func])
+.reduce((acc, val, i) => { acc[val] = (acc[val] || []).concat(arr[i]); return acc; }, {});
 // groupBy([6.1, 4.2, 6.3], Math.floor) -> {4: [4.2], 6: [6.1, 6.3]}
 // groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
@@ -340,9 +359,9 @@ const groupBy = (arr, func) =>
 
 ### head
 
-Returns the head of a list.
+返回列表的头。
 
-Use `arr[0]` to return the first element of the passed array.
+使用`arr[0]`可返回传递的数组的第一个元素。
 
 ```js
 const head = arr => arr[0];
@@ -353,9 +372,11 @@ const head = arr => arr[0];
 
 ### initial
 
-Returns all the elements of an array except the last one.
+返回除最后一个数组之外的所有元素。
 
-Use `arr.slice(0,-1)`to return all but the last element of the array.
+使用 "
+
+`arr.slice(0,-1)`" 返回数组的最后一个元素。
 
 ```js
 const initial = arr => arr.slice(0, -1);
@@ -366,14 +387,13 @@ const initial = arr => arr.slice(0, -1);
 
 ### initializeArrayWithRange
 
-Initializes an array containing the numbers in the specified range.
+初始化包含指定范围内的数字的数组。
 
-Use `Array(end-start)` to create an array of the desired length, `Array.map()` to fill with the desired values in a range.
-You can omit `start` to use a default value of `0`.
+使用`Array(end-start)`创建所需长度的数组`Array.map()`以填充区域中所需的值。可以省略`start`以使用默认值`0`.
 
 ```js
 const initializeArrayWithRange = (end, start = 0) =>
-  Array.from({ length: end - start }).map((v, i) => i + start);
+Array.from({ length: end - start }).map((v, i) => i + start);
 // initializeArrayWithRange(5) -> [0,1,2,3,4]
 ```
 
@@ -381,10 +401,11 @@ const initializeArrayWithRange = (end, start = 0) =>
 
 ### initializeArrayWithValues
 
-Initializes and fills an array with the specified values.
+初始化并填充具有指定值的数组。
 
-Use `Array(n)` to create an array of the desired length, `fill(v)` to fill it with the desired values.
-You can omit `value` to use a default value of `0`.
+使用`Array(n)`创建所需长度的数组,
+
+`fill(v)`以填充所需的值。可以省略`value`以使用默认值`0`.
 
 ```js
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
@@ -395,9 +416,15 @@ const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 
 ### intersection
 
-Returns a list of elements that exist in both arrays.
+返回两个数组中存在的元素的列表。
 
-Create a `Set` from `b`, then use `Array.filter()` on `a` to only keep values contained in `b`.
+从`b`创建`Set`
+
+, 然后使用`Array.filter()`
+
+on
+
+`a`只保留`b`中包含的值.
 
 ```js
 const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
@@ -408,9 +435,9 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 
 ### last
 
-Returns the last element in an array.
+返回数组中的最后一个元素。
 
-Use `arr.length - 1` to compute index of the last element of the given array and returning it.
+使用`arr.length - 1`可计算给定数组的最后一个元素的索引并返回它。
 
 ```js
 const last = arr => arr[arr.length - 1];
@@ -421,13 +448,13 @@ const last = arr => arr[arr.length - 1];
 
 ### mapObject
 
-Maps the values of an array to an object using a function, where the key-value pairs consist of the original value as the key and the mapped value.
+使用函数将数组的值映射到对象, 其中键值对由原始值作为键和映射值组成。
 
-Use an anonymous inner function scope to declare an undefined memory space, using closures to store a return value. Use a new `Array` to stor the array with a map of the function over its data set and a comma operator to return a second step, without needing to move from one context to another (due to closures and order of operations).
+使用匿名内部函数范围来声明未定义的内存空间, 使用闭包来存储返回值。使用新的`Array`可将该数组与函数的映射放在其数据集上, 而逗号运算符返回第二个步骤, 而不需要从一个上下文移动到另一个环境 (由于关闭和操作顺序)。
 
 ```js
 const mapObject = (arr, fn) => 
-  (a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
+(a => (a = [arr, arr.map(fn)], a[0].reduce( (acc,val,ind) => (acc[val] = a[1][ind], acc), {}) )) ( );
 /*
 const squareIt = arr => mapObject(arr, a => a*a)
 squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
@@ -438,11 +465,9 @@ squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
 
 ### nthElement
 
-Returns the nth element of an array.
+返回数组的第 n 个元素。
 
-Use `Array.slice()` to get an array containing the nth element at the first place.
-If the index is out of bounds, return `[]`.
-Omit the second argument, `n`, to get the first element of the array.
+使用`Array.slice()`可获取包含第 n 个元素的数组。如果索引超出界限, 则返回`[]`。省略第二个参数`n`, 以获取数组的第一个元素。
 
 ```js
 const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
@@ -454,13 +479,13 @@ const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
 
 ### pick
 
-Picks the key-value pairs corresponding to the given keys from an object.
+从对象中选取对应于给定键的键值对。
 
-Use `Array.reduce()` to convert the filtered/picked keys back to a object with the corresponding key-value pair if the key exist in the obj.
+使用`Array.reduce()`将筛选/选取的密钥转换回具有相应键值对的对象 (如果在 obj 中存在该键)。
 
 ```js
 const pick = (obj, arr) =>
-  arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
+arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
 // pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
 ```
 
@@ -468,15 +493,16 @@ const pick = (obj, arr) =>
 
 ### pull
 
-Mutates the original array to filter out the values specified.
+对原始数组进行变异, 以筛选出指定的值。
 
-Use `Array.filter()` and `Array.includes()` to pull out the values that are not needed.
-Use `Array.length = 0` to mutate the passed in array by resetting it's length to zero and `Array.push()` to re-populate it with only the pulled values.
+使用`Array.filter()`和`Array.includes()`来拉出不需要的值。使用`Array.length = 0`可将传入的数组中的长度重置为零, 并将其设置为`Array.push()`
+
+, 以便仅使用所提取的值填充它。
 
 ```js
 const pull = (arr, ...args) => {
-  let pulled = arr.filter((v, i) => !args.includes(v));
-  arr.length = 0; pulled.forEach(v => arr.push(v));
+let pulled = arr.filter((v, i) => !args.includes(v));
+arr.length = 0; pulled.forEach(v => arr.push(v));
 };
 // let myArray = ['a', 'b', 'c', 'a', 'b', 'c'];
 // pull(myArray, 'a', 'c');
@@ -487,17 +513,19 @@ const pull = (arr, ...args) => {
 
 ### remove
 
-Removes elements from an array for which the given function returns `false`.
+从数组中移除给定函数返回`false`的元素.
+使用`Array.filter()`查找返回 truthy 值的数组元素和`Array.reduce()`以使用`Array.splice()`删除元素。使用三参数 (
 
-Use `Array.filter()` to find array elements that return truthy values and `Array.reduce()` to remove elements using `Array.splice()`.
-The `func` is invoked with three arguments (`value, index, array`).
+`func`
+
+`value, index, array`调用函数).
 
 ```js
 const remove = (arr, func) =>
-  Array.isArray(arr) ? arr.filter(func).reduce((acc, val) => {
-    arr.splice(arr.indexOf(val), 1); return acc.concat(val);
-    }, [])
-  : [];
+Array.isArray(arr) ? arr.filter(func).reduce((acc, val) => {
+arr.splice(arr.indexOf(val), 1); return acc.concat(val);
+}, [])
+: [];
 // remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
@@ -505,10 +533,9 @@ const remove = (arr, func) =>
 
 ### sample
 
-Returns a random element from an array.
+返回数组中的随机元素。
 
-Use `Math.random()` to generate a random number, multiply it with `length` and round it of to the nearest whole number using `Math.floor()`.
-This method also works with strings.
+使用`Math.random()`生成一个随机数, 将它与`length`相乘, 并使用数学将其舍入到最接近的整数`Math.floor()`。此方法也适用于字符串。
 
 ```js
 const sample = arr => arr[Math.floor(Math.random() * arr.length)];
@@ -519,9 +546,9 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 
 ### shuffle
 
-Randomizes the order of the values of an array.
+随机数组值的顺序。
 
-Use `Array.sort()` to reorder elements, using `Math.random()` in the comparator.
+使用`Array.sort()`可在比较器中使用`Math.random()`重新排序元素。
 
 ```js
 const shuffle = arr => arr.sort(() => Math.random() - 0.5);
@@ -532,9 +559,9 @@ const shuffle = arr => arr.sort(() => Math.random() - 0.5);
 
 ### similarity
 
-Returns an array of elements that appear in both arrays.
+返回两个数组中都显示的元素的数组。
 
-Use `filter()` to remove values that are not part of `values`, determined using `includes()`.
+使用`filter()`可删除不属于`values`的值, 使用`includes()`确定.
 
 ```js
 const similarity = (arr, values) => arr.filter(v => values.includes(v));
@@ -545,14 +572,18 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 
 ### symmetricDifference
 
-Returns the symmetric difference between two arrays.
+返回两个数组之间的对称差。
 
-Create a `Set` from each array, then use `Array.filter()` on each of them to only keep values not contained in the other.
+从每个数组创建一个`Set`
+
+, 然后对它们中的每一个都使用`Array.filter()`
+
+, 以便只保留其他值中不包含的数值。
 
 ```js
 const symmetricDifference = (a, b) => {
-  const sA = new Set(a), sB = new Set(b);
-  return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
+const sA = new Set(a), sB = new Set(b);
+return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 }
 // symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
@@ -561,9 +592,11 @@ const symmetricDifference = (a, b) => {
 
 ### tail
 
-Returns all elements in an array except for the first one.
+返回数组中的所有元素, 除第一个。
 
-Return `arr.slice(1)` if the array's `length` is more than `1`, otherwise return the whole array.
+如果数组的`length`大于`1`, 则返回`arr.slice(1)`
+
+, 否则返回整个数组。
 
 ```js
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
@@ -575,9 +608,9 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 
 ### take
 
-Returns an array with n elements removed from the beginning.
+返回一个数组, 其中 n 个元素从开始处移除。
 
-Use `Array.slice()` to create a slice of the array with `n` elements taken from the beginning.
+使用`Array.slice()`创建数组的切片, 其中包含从开始处取出的`n`元素。
 
 ```js
 const take = (arr, n = 1) => arr.slice(0, n);
@@ -589,9 +622,9 @@ const take = (arr, n = 1) => arr.slice(0, n);
 
 ### takeRight
 
-Returns an array with n elements removed from the end.
+返回一个数组, 其中 n 个元素从末尾移除。
 
-Use `Array.slice()` to create a slice of the array with `n` elements taken from the end.
+使用`Array.slice()`创建数组的切片, 其中包含从末尾取出的`n`元素。
 
 ```js
 const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
@@ -603,9 +636,11 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 
 ### union
 
-Returns every element that exists in any of the two arrays once.
+返回在两个数组中的任意一个中存在的每个元素。
 
-Create a `Set` with all values of `a` and `b` and convert to an array.
+创建一个`Set`
+
+, 其中包含`a`和`b`的所有值, 并将其转换为数组。
 
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
@@ -616,9 +651,9 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 
 ### without
 
-Filters out the elements of an array, that have one of the specified values.
+筛选出数组中具有指定值之一的元素。
 
-Use `Array.filter()` to create an array excluding(using `!Array.includes()`) all given values.
+使用`Array.filter()`创建不包括的数组 (使用`!Array.includes()`) 所有给定值。
 
 ```js
 const without = (arr, ...args) => arr.filter(v => !args.includes(v));
@@ -629,35 +664,40 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 
 ### zip
 
-Creates an array of elements, grouped based on the position in the original arrays.
+创建基于原始数组中的位置分组的元素数组。
 
-Use `Math.max.apply()` to get the longest array in the arguments.
-Creates an array with that length as return value and use `Array.from()` with a map-function to create an array of grouped elements.
-If lengths of the argument-arrays vary, `undefined` is used where no value could be found.
+使用`Math.max.apply()`获取参数中最长的数组。创建一个以该长度为返回值的数组, 并使用 map 函数创建一个分组元素的数组`Array.from()`如果参数数组的长度不同, 则在未找到任何值的情况下使用`undefined`。
 
 ```js
 const zip = (...arrays) => {
-  const maxLength = Math.max(...arrays.map(x => x.length));
-  return Array.from({length: maxLength}).map((_, i) => {
-   return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
-  })
+const maxLength = Math.max(...arrays.map(x => x.length));
+return Array.from({length: maxLength}).map((_, i) => {
+return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
+})
 }
 //zip(['a', 'b'], [1, 2], [true, false]); -> [['a', 1, true], ['b', 2, false]]
 //zip(['a'], [1, 2], [true, false]); -> [['a', 1, true], [undefined, 2, false]]
 ```
 
+## 浏览器
+
 [⬆ back to top](#table-of-contents)
-## Browser
 
 ### bottomVisible
 
-Returns `true` if the bottom of the page is visible, `false` otherwise.
+如果页的底部可见, 则返回`true`
 
-Use `scrollY`, `scrollHeight` and `clientHeight` to determine if the bottom of the page is visible.
+, 否则为`false`
+
+。
+
+使用`scrollY`、
+
+`scrollHeight`和`clientHeight`来确定页面底部是否可见。
 
 ```js
 const bottomVisible = () =>
-  document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
+document.documentElement.clientHeight + window.scrollY >= document.documentElement.scrollHeight || document.documentElement.clientHeight;
 // bottomVisible() -> true
 ```
 
@@ -665,9 +705,9 @@ const bottomVisible = () =>
 
 ### currentURL
 
-Returns the current URL.
+返回当前 URL。
 
-Use `window.location.href` to get current URL.
+使用`window.location.href`获取当前 URL。
 
 ```js
 const currentURL = () => window.location.href;
@@ -678,20 +718,21 @@ const currentURL = () => window.location.href;
 
 ### elementIsVisibleInViewport
 
-Returns `true` if the element specified is visible in the viewport, `false` otherwise.
+如果指定的元素在视区中可见, 则返回`true`
 
-Use `Element.getBoundingClientRect()` and the `window.inner(Width|Height)` values
-to determine if a given element is visible in the viewport.
-Omit the second argument to determine if the element is entirely visible, or specify `true` to determine if
-it is partially visible.
+, 否则为`false`
+
+。
+
+使用`Element.getBoundingClientRect()`和`window.inner(Width|Height)`值以确定给定元素在视区中是否可见。省略第二个参数以确定该元素是否完全可见, 或指定`true`以确定它是否部分可见。
 
 ```js
 const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
-  const { top, left, bottom, right } = el.getBoundingClientRect();
-  return partiallyVisible
-    ? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
-      ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-    : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
+const { top, left, bottom, right } = el.getBoundingClientRect();
+return partiallyVisible
+? ((top > 0 && top < innerHeight) || (bottom > 0 && bottom < innerHeight)) &&
+((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
+: top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
 };
 // e.g. 100x100 viewport and a 10x10px element at position {top: -1, left: 0, bottom: 9, right: 10}
 // elementIsVisibleInViewport(el) -> false (not fully visible)
@@ -702,15 +743,16 @@ const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
 
 ### getScrollPosition
 
-Returns the scroll position of the current page.
+返回当前页的滚动位置。
 
-Use `pageXOffset` and `pageYOffset` if they are defined, otherwise `scrollLeft` and `scrollTop`.
-You can omit `el` to use a default value of `window`.
+如果已定义, 则使用`pageXOffset`和`pageYOffset`
+
+, 否则`scrollLeft`和`scrollTop`。可以省略`el`以使用`window`的默认值.
 
 ```js
 const getScrollPosition = (el = window) =>
-  ({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
-    y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
+({x: (el.pageXOffset !== undefined) ? el.pageXOffset : el.scrollLeft,
+y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
 // getScrollPosition() -> {x: 0, y: 200}
 ```
 
@@ -718,16 +760,17 @@ const getScrollPosition = (el = window) =>
 
 ### getURLParameters
 
-Returns an object containing the parameters of the current URL.
+返回一个包含当前 URL 参数的对象。
 
-Use `match()` with an appropriate regular expression to get all key-value pairs, `Array.reduce()` to map and combine them into a single object.
-Pass `location.search` as the argument to apply to the current `url`.
+使用`match()`与适当的正则表达式来获取所有键值对,
+
+`Array.reduce()`可将它们映射并合并到单个对象中。将`location.search`作为要应用于当前`url`的参数传递.
 
 ```js
 const getURLParameters = url =>
-  url.match(/([^?=&]+)(=([^&]*))/g).reduce(
-    (a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
-  );
+url.match(/([^?=&]+)(=([^&]*))/g).reduce(
+(a, v) => (a[v.slice(0, v.indexOf('='))] = v.slice(v.indexOf('=') + 1), a), {}
+);
 // getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
@@ -735,14 +778,15 @@ const getURLParameters = url =>
 
 ### redirect
 
-Redirects to a specified URL.
+重定向到指定的 URL。
 
-Use `window.location.href` or `window.location.replace()` to redirect to `url`.
-Pass a second argument to simulate a link click (`true` - default) or an HTTP redirect (`false`).
+使用`window.location.href`或`window.location.replace()`重定向到`url`。传递第二个参数以模拟链接单击 (`true`
+
+-默认值) 或 HTTP 重定向 (`false`).
 
 ```js
 const redirect = (url, asLink = true) =>
-  asLink ? window.location.href = url : window.location.replace(url);
+asLink ? window.location.href = url : window.location.replace(url);
 // redirect('https://google.com')
 ```
 
@@ -750,30 +794,30 @@ const redirect = (url, asLink = true) =>
 
 ### scrollToTop
 
-Smooth-scrolls to the top of the page.
+平滑滚动到页面顶部。
 
-Get distance from top using `document.documentElement.scrollTop` or `document.body.scrollTop`.
-Scroll by a fraction of the distance from top. Use `window.requestAnimationFrame()` to animate the scrolling.
+使用`document.documentElement.scrollTop`或`document.body.scrollTop`从顶部获取距离。从顶部的距离的一小部分滚动。使用`window.requestAnimationFrame()`对滚动进行动画处理。
 
 ```js
 const scrollToTop = () => {
-  const c = document.documentElement.scrollTop || document.body.scrollTop;
-  if (c > 0) {
-    window.requestAnimationFrame(scrollToTop);
-    window.scrollTo(0, c - c / 8);
-  }
+const c = document.documentElement.scrollTop || document.body.scrollTop;
+if (c > 0) {
+window.requestAnimationFrame(scrollToTop);
+window.scrollTo(0, c - c / 8);
+}
 };
 // scrollToTop()
 ```
 
+## 日期
+
 [⬆ back to top](#table-of-contents)
-## Date
 
 ### getDaysDiffBetweenDates
 
-Returns the difference (in days) between two dates.
+返回两个日期之间的差异 (以天为值)。
 
-Calculate the difference (in days) between to `Date` objects.
+计算`Date`对象之间的差异 (以天为)。
 
 ```js
 const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateInitial) / (1000 * 3600 * 24);
@@ -784,14 +828,14 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 
 ### JSONToDate
 
-Converts a JSON object to a date.
+将 JSON 对象转换为日期。
 
-Use `Date()`, to convert dates in JSON format to readable format (`dd/mm/yyyy`).
+使用`Date()`, 将 JSON 格式的日期转换为可读格式 (`dd/mm/yyyy`日)).
 
 ```js
 const JSONToDate = arr => {
-  const dt = new Date(parseInt(arr.toString().substr(6)));
-  return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
+const dt = new Date(parseInt(arr.toString().substr(6)));
+return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
 };
 // JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
@@ -800,25 +844,27 @@ const JSONToDate = arr => {
 
 ### toEnglishDate
 
-Converts a date from American format to English format.
+将日期从美国格式转换为英文格式。
 
-Use `Date.toISOString()`, `split('T')` and `replace()` to convert a date from American format to English format.
-Throws an error if the passed time cannot be converted to a date.
+使用`Date.toISOString()`、`split('T')`和`replace()`将日期从美式格式转换为英文格式。如果传递的时间不能转换为日期, 则抛出错误。
 
 ```js
 const toEnglishDate  = (time) =>
-  {try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
+{try{return new Date(time).toISOString().split('T')[0].replace(/-/g, '/')}catch(e){return}};
 // toEnglishDate('09/21/2010') -> '21/09/2010'
 ```
 
+## 功能
+
 [⬆ back to top](#table-of-contents)
-## Function
 
 ### chainAsync
 
-Chains asynchronous functions.
+链异步函数。
 
-Loop through an array of functions containing asynchronous events, calling `next` when each asynchronous event has completed.
+循环遍历包含异步事件的函数数组, 当每个异步事件完成时调用`next`
+
+。
 
 ```js
 const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
@@ -835,10 +881,9 @@ chainAsync([
 
 ### compose
 
-Performs right-to-left function composition.
+执行从右向左的函数组合。
 
-Use `Array.reduce()` to perform right-to-left function composition.
-The last (rightmost) function can accept one or more arguments; the remaining functions must be unary.
+使用`Array.reduce()`执行从右向左的函数组合。最后一个 (最右边) 的函数可以接受一个或多个参数;其余的函数必须是一元的。
 
 ```js
 const compose = (...fns) => fns.reduce((f, g) => (...args) => f(g(...args)));
@@ -856,16 +901,19 @@ multiplyAndAdd5(5, 2) -> 15
 
 Curries a function.
 
-Use recursion.
-If the number of provided arguments (`args`) is sufficient, call the passed function `f`.
-Otherwise return a curried function `f` that expects the rest of the arguments.
-If you want to curry a function that accepts a variable number of arguments (a variadic function, e.g. `Math.min()`), you can optionally pass the number of arguments to the second parameter `arity`.
+使用递归。如果提供的参数 (变量) 的数量足够, 请调用传递的函数`args`
+
+`f`。否则, 返回需要其余参数的扩充函数`f`
+
+。如果你想咖喱一个函数, 接受可变数目的参数 (如`Math.min()`), 可以选择将参数的个数传递到第二个参数`arity`
+
+(可变函数).
 
 ```js
 const curry = (fn, arity = fn.length, ...args) =>
-  arity <= args.length
-    ? fn(...args)
-    : curry.bind(null, fn, arity, ...args);
+arity <= args.length
+? fn(...args)
+: curry.bind(null, fn, arity, ...args);
 // curry(Math.pow)(2)(10) -> 1024
 // curry(Math.min, 3)(10)(50)(2) -> 2
 ```
@@ -874,9 +922,9 @@ const curry = (fn, arity = fn.length, ...args) =>
 
 ### functionName
 
-Logs the name of a function.
+记录函数的名称。
 
-Use `console.debug()` and the `name` property of the passed method to log the method's name to the `debug` channel of the console.
+使用`console.debug()`和传递的方法的`name`属性将方法的名称记录到控制台的`debug`通道中。
 
 ```js
 const functionName = fn => (console.debug(fn.name), fn);
@@ -887,10 +935,9 @@ const functionName = fn => (console.debug(fn.name), fn);
 
 ### pipe
 
-Performs left-to-right function composition.
+执行从左向右的函数组合。
 
-Use `Array.reduce()` with the spread operator (`...`) to perform left-to-right function composition.
-The first (leftmost) function can accept one or more arguments; the remaining functions must be unary.
+使用`Array.reduce()`与扩展运算符 (`...`) 执行从左向右的函数组合。第一个 (最左边的) 函数可以接受一个或多个参数;其余的函数必须是一元的。
 
 ```js
 const pipeFunctions = (...fns) => fns.reduce((f, g) => (...args) => g(f(...args)));
@@ -906,20 +953,18 @@ multiplyAndAdd5(5, 2) -> 15
 
 ### promisify
 
-Converts an asynchronous function to return a promise.
+转换异步函数以返回一个承诺。
 
-Use currying to return a function returning a `Promise` that calls the original function.
-Use the `...rest` operator to pass in all the parameters.
-
-*In Node 8+, you can use [`util.promisify`](https://nodejs.org/api/util.html#util_util_promisify_original)*
+使用讨好返回一个返回调用原始函数的`Promise`的函数。使用`...rest`运算符传入所有参数。
+*在节点 8 + 中, 可以使用 [`util.promisify`](https://www.microsofttranslator.com/bv.aspx?from=&to=zh-CHS&a=https%3A%2F%2Fnodejs.org%2Fapi%2Futil.html%23util_util_promisify_original)*
 
 ```js
 const promisify = func =>
-  (...args) =>
-    new Promise((resolve, reject) =>
-      func(...args, (err, result) =>
-        err ? reject(err) : resolve(result))
-    );
+(...args) =>
+new Promise((resolve, reject) =>
+func(...args, (err, result) =>
+err ? reject(err) : resolve(result))
+);
 // const delay = promisify((d, cb) => setTimeout(cb, d))
 // delay(2000).then(() => console.log('Hi!')) -> Promise resolves after 2s
 ```
@@ -928,9 +973,9 @@ const promisify = func =>
 
 ### runPromisesInSeries
 
-Runs an array of promises in series.
+运行一系列的承诺系列。
 
-Use `Array.reduce()` to create a promise chain, where each promise returns the next promise when resolved.
+使用`Array.reduce()`创建一个承诺链, 每个承诺在解决时返回下一个承诺。
 
 ```js
 const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.resolve());
@@ -942,9 +987,9 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 
 ### sleep
 
-Delays the execution of an asynchronous function.
+延迟异步函数的执行。
 
-Delay executing part of an `async` function, by putting it to sleep, returning a `Promise`.
+延迟执行`async`函数的一部分, 将其放入休眠状态, 返回`Promise`.
 
 ```js
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -957,14 +1002,15 @@ async function sleepyWork() {
 */
 ```
 
+## 数学
+
 [⬆ back to top](#table-of-contents)
-## Math
 
 ### arrayAverage
 
-Returns the average of an array of numbers.
+返回数字数组的平均值。
 
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`, divide by the `length` of the array.
+使用`Array.reduce()`将每个值添加到累加器中, 并以`0`的值初始化, 除以数组的`length`。
 
 ```js
 const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
@@ -975,9 +1021,9 @@ const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 
 ### arraySum
 
-Returns the sum of an array of numbers.
+返回一个数字数组的总和。
 
-Use `Array.reduce()` to add each value to an accumulator, initialized with a value of `0`.
+使用`Array.reduce()`将每个值添加到累加器中, 并以`0`值初始化.
 
 ```js
 const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
@@ -988,9 +1034,9 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 
 ### collatz
 
-Applies the Collatz algorithm.
+应用 Collatz 算法。
 
-If `n` is even, return `n/2`. Otherwise  return `3n+1`.
+如果`n`是偶数, 则返回`n/2`。否则返回`3n+1`.
 
 ```js
 const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
@@ -1000,12 +1046,11 @@ const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 
 [⬆ back to top](#table-of-contents)
 
-### digitize
+### collatz
 
-Converts a number to an array of digits.
+将数字转换为数字数组。
 
-Convert the number to a string, using spread operators in ES6(`[...string]`) build an array.
-Use `Array.map()` and `parseInt()` to transform each value to an integer.
+将数字转换为字符串, 在 ES6 (`[...string]`) 中使用扩展运算符生成数组。使用`Array.map()`和`parseInt()`将每个值转换为整数。
 
 ```js
 const digitize = n => [...''+n].map(i => parseInt(i));
@@ -1014,11 +1059,11 @@ const digitize = n => [...''+n].map(i => parseInt(i));
 
 [⬆ back to top](#table-of-contents)
 
-### distance
+### digitize
 
-Returns the distance between two points.
+返回两点之间的距离。
 
-Use `Math.hypot()` to calculate the Euclidean distance between two points.
+使用`Math.hypot()`计算两个点之间的欧氏距离。
 
 ```js
 const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
@@ -1027,19 +1072,16 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 
 [⬆ back to top](#table-of-contents)
 
-### factorial
+### distance
 
-Calculates the factorial of a number.
+计算数字的阶乘。
 
-Use recursion.
-If `n` is less than or equal to `1`, return `1`.
-Otherwise, return the product of `n` and the factorial of `n - 1`.
-Throws an exception if `n` is a negative number.
+使用递归。如果`n`小于或等于`1`, 则返回`1`。否则, 返回`n`的乘积和`n - 1`的阶乘。如果`n`为负数, 则引发异常。
 
 ```js
 const factorial = n =>
-  n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
-  : n <= 1 ? 1 : n * factorial(n - 1);
+n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
+: n <= 1 ? 1 : n * factorial(n - 1);
 // factorial(6) -> 720
 ```
 
@@ -1047,14 +1089,13 @@ const factorial = n =>
 
 ### fibonacci
 
-Generates an array, containing the Fibonacci sequence, up until the nth term.
+生成一个数组, 包含斐波那契数列, 直到第 n 个项。
 
-Create an empty array of the specific length, initializing the first two values (`0` and `1`).
-Use `Array.reduce()` to add values into the array, using the sum of the last two values, except for the first two.
+创建一个指定长度的空数组, 初始化前两个值 (`0`和`1`)。使用`Array.reduce()`可将值添加到数组中, 方法是使用前两个值的总和, 但前两个数值除外。
 
 ```js
 const fibonacci = n =>
-  Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
+Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i - 2] : i), []);
 // fibonacci(5) -> [0,1,1,2,3]
 ```
 
@@ -1062,11 +1103,9 @@ const fibonacci = n =>
 
 ### gcd
 
-Calculates the greatest common divisor between two numbers.
+计算两个数字之间最大的公共除数。
 
-Use recursion.
-Base case is when `y` equals `0`. In this case, return `x`.
-Otherwise, return the GCD of `y` and the remainder of the division `x/y`.
+使用递归。基本情况是当`y`等于`0`时。在这种情况下, 返回`x`。否则, 返回`y`的 GCD 和除法的其余部分`x/y`.
 
 ```js
 const gcd = (x, y) => !y ? x : gcd(y, x % y);
@@ -1077,14 +1116,13 @@ const gcd = (x, y) => !y ? x : gcd(y, x % y);
 
 ### hammingDistance
 
-Calculates the Hamming distance between two values.
+计算两个值之间的汉明距离。
 
-Use XOR operator (`^`) to find the bit difference between the two numbers, convert to binary string using `toString(2)`.
-Count and return the number of `1`s in the string, using `match(/1/g)`.
+使用 XOR 运算符 (`^`) 可查找两个数字之间的位差, 使用`toString(2)`转换为二进制字符串。使用`match(/1/g)`计算并返回字符串中`1`的数目。.
 
 ```js
 const hammingDistance = (num1, num2) =>
-  ((num1 ^ num2).toString(2).match(/1/g) || '').length;
+((num1 ^ num2).toString(2).match(/1/g) || '').length;
 // hammingDistance(2,3) -> 1
 ```
 
@@ -1092,9 +1130,9 @@ const hammingDistance = (num1, num2) =>
 
 ### isDivisible
 
-Checks if the first numeric argument is divisible by the second one.
+检查第一个数值参数是否可被另一个数字变量整除。
 
-Use the modulo operator (`%`) to check if the remainder is equal to `0`.
+使用模数运算符 (`%`) 检查余数是否等于`0`.
 
 ```js
 const isDivisible = (dividend, divisor) => dividend % divisor === 0;
@@ -1103,12 +1141,19 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 
 [⬆ back to top](#table-of-contents)
 
-### isEven
+### iseven
 
-Returns `true` if the given number is even, `false` otherwise.
+如果给定的数字为偶数, 则返回`true`
 
-Checks whether a number is odd or even using the modulo (`%`) operator.
-Returns `true` if the number is even, `false` if the number is odd.
+, 否则为`false`
+
+。
+
+检查一个数字是奇数还是使用模数 (`%`) 运算符。如果数字为偶数, 则返回`true`
+
+, 如果数字为奇数, 则为`false`
+
+。
 
 ```js
 const isEven = num => num % 2 === 0;
@@ -1119,15 +1164,14 @@ const isEven = num => num % 2 === 0;
 
 ### lcm
 
-Returns the least common multiple of two numbers.
+返回两个数字中最不常见的倍数。
 
-Use the greatest common divisor (GCD) formula and `Math.abs()` to determine the least common multiple.
-The GCD formula uses recursion.
+使用最大的公共除数 (GCD) 公式和`Math.abs()`来确定最不常见的倍数。GCD 公式使用递归。
 
 ```js
 const lcm = (x,y) => {
-  const gcd = (x, y) => !y ? x : gcd(y, x % y);
-  return Math.abs(x*y)/(gcd(x,y));
+const gcd = (x, y) => !y ? x : gcd(y, x % y);
+return Math.abs(x*y)/(gcd(x,y));
 };
 // lcm(12,7) -> 84
 ```
@@ -1136,15 +1180,14 @@ const lcm = (x,y) => {
 
 ### median
 
-Returns the median of an array of numbers.
+返回数字数组的中间值。
 
-Find the middle of the array, use `Array.sort()` to sort the values.
-Return the number at the midpoint if `length` is odd, otherwise the average of the two middle numbers.
+找到数组的中间, 使用`Array.sort()`来对值进行排序。如果`length`为奇数, 则返回中点的数字, 否则为两个中间数的平均值。
 
 ```js
 const median = arr => {
-  const mid = Math.floor(arr.length / 2), nums = arr.sort((a, b) => a - b);
-  return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+const mid = Math.floor(arr.length / 2), nums = arr.sort((a, b) => a - b);
+return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 };
 // median([5,6,50,1,-5]) -> 5
 // median([0,10,-2,7]) -> 3.5
@@ -1154,44 +1197,51 @@ const median = arr => {
 
 ### palindrome
 
-Returns `true` if the given string is a palindrome, `false` otherwise.
+如果给定字符串为回文, 则返回`true`
 
-Convert string `toLowerCase()` and use `replace()` to remove non-alphanumeric characters from it.
-Then, `split('')` into individual characters, `reverse()`, `join('')` and compare to the original, unreversed string, after converting it `tolowerCase()`.
+, 否则为`false`
+
+。
+
+转换字符串`toLowerCase()`并使用`replace()`从其中删除非字母数字字符。然后,`split('')`到各个字符,`reverse()`,
+
+`join('')`
+
+, 并将其与原始的、不可逆转的字符串进行比较, 然后将其转换为`tolowerCase()`.
 
 ```js
 const palindrome = str => {
-  const s = str.toLowerCase().replace(/[\W_]/g,'');
-  return s === s.split('').reverse().join('');
+const s = str.toLowerCase().replace(/[\W_]/g,'');
+return s === s.split('').reverse().join('');
 }
 // palindrome('taco cat') -> true
- ```
+```
 
 [⬆ back to top](#table-of-contents)
 
 ### percentile
 
-Uses the percentile formula to calculate how many numbers in the given array are less or equal to the given value.
+使用百分比公式计算给定数组中有多少个数小于或等于给定值。
 
-Use `Array.reduce()` to calculate how many numbers are below the value and how many are the same value and apply the percentile formula.
+使用`Array.reduce()`计算值的下面有多少, 有多少个数是相同的值, 并应用百分比公式。
 
 ```js
 const percentile = (arr, val) =>
-  100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
+100 * arr.reduce((acc,v) => acc + (v < val ? 1 : 0) + (v === val ? 0.5 : 0), 0) / arr.length;
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
- ```
+```
 
 [⬆ back to top](#table-of-contents)
 
 ### powerset
 
-Returns the powerset of a given array of numbers.
+返回给定数字数组的 powerset。
 
-Use `Array.reduce()` combined with `Array.map()` to iterate over elements and combine into an array containing all combinations.
+使用`Array.reduce()`与`Array.map()`组合, 以循环访问元素并将其合并到包含所有组合的数组中。
 
 ```js
 const powerset = arr =>
-  arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
+arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
@@ -1199,9 +1249,9 @@ const powerset = arr =>
 
 ### randomIntegerInRange
 
-Returns a random integer in the specified range.
+返回指定范围内的随机整数。
 
-Use `Math.random()` to generate a random number and map it to the desired range, using `Math.floor()` to make it an integer.
+使用`Math.random()`生成一个随机数并将其映射到所需的范围, 使用`Math.floor()`使其成为整数。
 
 ```js
 const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
@@ -1212,9 +1262,9 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 
 ### randomNumberInRange
 
-Returns a random number in the specified range.
+返回指定范围内的随机数。
 
-Use `Math.random()` to generate a random value, map it to the desired range using multiplication.
+使用`Math.random()`生成随机值, 并使用乘法将其映射到所需的范围。
 
 ```js
 const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
@@ -1225,10 +1275,9 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 
 ### round
 
-Rounds a number to a specified amount of digits.
+将数字四舍五入到指定的位数。
 
-Use `Math.round()` and template literals to round the number to the specified number of digits.
-Omit the second argument, `decimals` to round to an integer.
+使用`Math.round()`和模板文本将数字舍入到指定的位数。省略第二个参数,`decimals`舍入为整数。
 
 ```js
 const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${decimals}`);
@@ -1239,53 +1288,51 @@ const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${de
 
 ### standardDeviation
 
-Returns the standard deviation of an array of numbers.
+返回数字数组的标准偏差。
 
-Use `Array.reduce()` to calculate the mean, variance and the sum of the variance of the values, the variance of the values, then
-determine the standard deviation.
-You can omit the second argument to get the sample standard deviation or set it to `true` to get the population standard deviation.
+使用`Array.reduce()`计算值的平均值、方差和方差的总和, 值的方差, 然后确定标准偏差。可以省略第二个参数以获取样本标准偏差, 或将其设置为`true`以获取总体标准偏差。
 
 ```js
 const standardDeviation = (arr, usePopulation = false) => {
-  const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
-  return Math.sqrt(
-    arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
-       .reduce((acc, val) => acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
-  );
+const mean = arr.reduce((acc, val) => acc + val, 0) / arr.length;
+return Math.sqrt(
+arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
+.reduce((acc, val) => acc + val, 0) / (arr.length - (usePopulation ? 0 : 1))
+);
 };
 // standardDeviation([10,2,38,23,38,23,21]) -> 13.284434142114991 (sample)
 // standardDeviation([10,2,38,23,38,23,21], true) -> 12.29899614287479 (population)
 ```
 
+## 媒体
+
 [⬆ back to top](#table-of-contents)
-## Media
 
 ### speechSynthesis
 
-Performs speech synthesis (experimental).
+执行语音合成 (实验)。
 
-Use `SpeechSynthesisUtterance.voice` and `window.speechSynthesis.getVoices()` to convert a message to speech.
-Use `window.speechSynthesis.speak()` to play the message.
-
-Learn more about the [SpeechSynthesisUtterance interface of the Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesisUtterance).
+使用`SpeechSynthesisUtterance.voice`和`window.speechSynthesis.getVoices()`将邮件转换为语音。使用`window.speechSynthesis.speak()`播放该消息。
+了解有关[Web 语音 API 的 SpeechSynthesisUtterance 接口的](https://www.microsofttranslator.com/bv.aspx?from=&to=zh-CHS&a=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FSpeechSynthesisUtterance)详细信息.
 
 ```js
 const speechSynthesis = message => {
-  const msg = new SpeechSynthesisUtterance(message);
-  msg.voice = window.speechSynthesis.getVoices()[0];
-  window.speechSynthesis.speak(msg);
+const msg = new SpeechSynthesisUtterance(message);
+msg.voice = window.speechSynthesis.getVoices()[0];
+window.speechSynthesis.speak(msg);
 };
 // speechSynthesis('Hello, World') -> plays the message
 ```
 
+## 节点
+
 [⬆ back to top](#table-of-contents)
-## Node
 
 ### JSONToFile
 
-Writes a JSON object to a file.
+将 JSON 对象写入文件。
 
-Use `fs.writeFile()`, template literals and `JSON.stringify()` to write a `json` object to a `.json` file.
+使用`fs.writeFile()`、模板文本和`JSON.stringify()`将`json`对象写入`.json`文件。
 
 ```js
 const fs = require('fs');
@@ -1297,45 +1344,43 @@ const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stri
 
 ### readFileLines
 
-Returns an array of lines from the specified file.
+返回指定文件中的行的数组。
 
-Use `readFileSync` function in `fs` node package to create a `Buffer` from a file.
-convert buffer to string using `toString(encoding)` function.
-creating an array from contents of file by `split`ing file content line by line (each `\n`).
+在`fs`节点包中使用`readFileSync`函数可以从文件创建`Buffer`。使用`toString(encoding)`函数将缓冲区转换为字符串。通过`split`ing 文件内容行从文件内容创建数组 (每个`\n`).
 
-  ```js
+```js
 const fs = require('fs');
 const readFileLines = filename => fs.readFileSync(filename).toString('UTF8').split('\n');
 /*
-  contents of test.txt :
-    line1
-    line2
-    line3
-    ___________________________
-  let arr = readFileLines('test.txt')
-  console.log(arr) // -> ['line1', 'line2', 'line3']
- */
+contents of test.txt :
+  line1
+  line2
+  line3
+  ___________________________
+let arr = readFileLines('test.txt')
+console.log(arr) // -> ['line1', 'line2', 'line3']
+*/
 ```
 
+## 对象
+
 [⬆ back to top](#table-of-contents)
-## Object
 
 ### cleanObj
 
-Removes any properties except the ones specified from a JSON object.
+移除从 JSON 对象指定的属性之外的任何特性。
 
-Use `Object.keys()` method to loop over given json object and deleting keys that are not `include`d in given array.
-Also if you give it a special key (`childIndicator`) it will search deeply inside it to apply function to inner objects too.
+使用`Object.keys()`方法可以遍历给定的 json 对象并删除在给定数组中不是`include`d 的键。另外, 如果给它一个特殊的键 (`childIndicator`), 它将在里面深入搜索, 并将函数应用于内部对象。
 
 ```js
 const cleanObj = (obj, keysToKeep = [], childIndicator) => {
-  Object.keys(obj).forEach(key => {
-    if (key === childIndicator) {
-      cleanObj(obj[key], keysToKeep, childIndicator);
-    } else if (!keysToKeep.includes(key)) {
-      delete obj[key];
-    }
-  })
+Object.keys(obj).forEach(key => {
+if (key === childIndicator) {
+cleanObj(obj[key], keysToKeep, childIndicator);
+} else if (!keysToKeep.includes(key)) {
+delete obj[key];
+}
+})
 }
 /*
   const testObj = {a: 1, b: 2, children: {a: 1, b: 2}}
@@ -1348,9 +1393,9 @@ const cleanObj = (obj, keysToKeep = [], childIndicator) => {
 
 ### objectFromPairs
 
-Creates an object from the given key-value pairs.
+从给定的键值对创建对象。
 
-Use `Array.reduce()` to create and combine key-value pairs.
+使用`Array.reduce()`创建和组合键值对。
 
 ```js
 const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
@@ -1361,9 +1406,9 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 
 ### objectToPairs
 
-Creates an array of key-value pair arrays from an object.
+从对象创建键值对数组的数组。
 
-Use `Object.keys()` and `Array.map()` to iterate over the object's keys and produce an array with key-value pairs.
+使用`Object.keys()`和`Array.map()`循环访问对象的键并生成具有键值对的数组。
 
 ```js
 const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
@@ -1374,9 +1419,9 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 
 ### shallowClone
 
-Creates a shallow clone of an object.
+创建对象的浅表克隆。
 
-Use `Object.assign()` and an empty object (`{}`) to create a shallow clone of the original.
+使用`Object.assign()`和一个空对象 (`{}`) 创建原始的浅克隆。
 
 ```js
 const shallowClone = obj => Object.assign({}, obj);
@@ -1391,32 +1436,30 @@ a === b -> false
 
 ### truthCheckCollection
 
-Checks if the predicate (second argument) is truthy on all elements of a collection (first argument).
+检查谓词 (第二个参数) 是否 truthy 集合的所有元素 (第一个参数)。
 
-Use `Array.every()` to check if each passed object has the specified property and if it returns a truthy value.
- 
- ```js
+使用`Array.every()`检查每个传递的对象是否具有指定的属性, 以及是否返回 truthy 值。
+
+```js
 truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
 // truthCheckCollection([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}], "sex") -> true
 ```
 
+## 字符串
+
 [⬆ back to top](#table-of-contents)
-## String
 
 ### anagrams
 
-Generates all anagrams of a string (contains duplicates).
+生成字符串的所有字谜 (包含重复项)。
 
-Use recursion.
-For each letter in the given string, create all the partial anagrams for the rest of its letters.
-Use `Array.map()` to combine the letter with each partial anagram, then `Array.reduce()` to combine all anagrams in one array.
-Base cases are for string `length` equal to `2` or `1`.
+使用递归。对于给定字符串中的每个字母, 为其其余字母创建所有部分字谜。使用`Array.map()`将字母与每个部分变位词组合在一起, 然后将`Array.reduce()`组合在一个数组中的所有字谜。基本情况为字符串`length`等于`2`或`1`.
 
 ```js
 const anagrams = str => {
-  if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
-  return str.split('').reduce((acc, letter, i) =>
-    acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
+if (str.length <= 2) return str.length === 2 ? [str, str[1] + str[0]] : [str];
+return str.split('').reduce((acc, letter, i) =>
+acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)), []);
 };
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
@@ -1425,14 +1468,15 @@ const anagrams = str => {
 
 ### Capitalize
 
-Capitalizes the first letter of a string.
+将字符串的第一个字母大写。
 
-Use destructuring and `toUpperCase()` to capitalize first letter, `...rest` to get array of characters after first letter and then `Array.join('')` to make it a string again.
-Omit the `lowerRest` parameter to keep the rest of the string intact, or set it to `true` to convert to lowercase.
+使用 destructuring 和`toUpperCase()`可将第一个字母、
+
+`...rest`用于获取第一个字母之后的字符数组, 然后是`Array.join('')`以使其成为字符串。省略`lowerRest`参数以保持字符串的其余部分不变, 或将其设置为`true`以转换为小写。
 
 ```js
 const capitalize = ([first,...rest], lowerRest = false) =>
-  first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
+first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 // capitalize('myName') -> 'MyName'
 // capitalize('myName', true) -> 'Myname'
 ```
@@ -1441,9 +1485,9 @@ const capitalize = ([first,...rest], lowerRest = false) =>
 
 ### capitalizeEveryWord
 
-Capitalizes the first letter of every word in a string.
+将字符串中每个单词的首字母大写。
 
-Use `replace()` to match the first character of each word and `toUpperCase()` to capitalize it.
+使用`replace()`匹配每个单词和`toUpperCase()`的第一个字符以将其大写。
 
 ```js
 const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperCase());
@@ -1454,9 +1498,9 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 
 ### escapeRegExp
 
-Escapes a string to use in a regular expression.
+转义要在正则表达式中使用的字符串。
 
-Use `replace()` to escape special characters.
+使用`replace()`可转义特殊字符。
 
 ```js
 const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -1467,15 +1511,14 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 ### fromCamelCase
 
-Converts a string from camelcase.
+从匹配转换字符串。
 
-Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
-Omit the second argument to use a default separator of `_`.
+使用`replace()`可删除下划线、连字符和空格, 并将单词转换为匹配。省略第二个参数以使用默认分隔符`_`.
 
 ```js
 const fromCamelCase = (str, separator = '_') =>
-  str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
-    .replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
+str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
+.replace(/([A-Z]+)([A-Z][a-z\d]+)/g, '$1' + separator + '$2').toLowerCase();
 // fromCamelCase('someDatabaseFieldName', ' ') -> 'some database field name'
 // fromCamelCase('someLabelThatNeedsToBeCamelized', '-') -> 'some-label-that-needs-to-be-camelized'
 // fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
@@ -1485,10 +1528,9 @@ const fromCamelCase = (str, separator = '_') =>
 
 ### reverseString
 
-Reverses a string.
+反转字符串。
 
-Use array destructuring and `Array.reverse()` to reverse the order of the characters in the string.
-Combine characters to get a string using `join('')`.
+使用数组 destructuring 和`Array.reverse()`可反转字符串中字符的顺序。使用`join('')`组合字符以获取字符串.
 
 ```js
 const reverseString = str => [...str].reverse().join('');
@@ -1499,13 +1541,13 @@ const reverseString = str => [...str].reverse().join('');
 
 ### sortCharactersInString
 
-Alphabetically sorts the characters in a string.
+按字母顺序对字符串中的字符进行排序。
 
-Split the string using `split('')`, `Array.sort()` utilizing `localeCompare()`, recombine using `join('')`.
+使用`split('')`、`Array.sort()`利用`localeCompare()`重新组合使用`join('')`.
 
 ```js
 const sortCharactersInString = str =>
-  str.split('').sort((a, b) => a.localeCompare(b)).join('');
+str.split('').sort((a, b) => a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -> 'aabbceg'
 ```
 
@@ -1513,13 +1555,13 @@ const sortCharactersInString = str =>
 
 ### toCamelCase
 
-Converts a string to camelcase.
+将字符串转换为匹配。
 
-Use `replace()` to remove underscores, hyphens and spaces and convert words to camelcase.
+使用`replace()`可删除下划线、连字符和空格, 并将单词转换为匹配。
 
 ```js
 const toCamelCase = str =>
-  str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
+str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpperCase() : p1.toLowerCase());
 // toCamelCase("some_database_field_name") -> 'someDatabaseFieldName'
 // toCamelCase("Some label that needs to be camelized") -> 'someLabelThatNeedsToBeCamelized'
 // toCamelCase("some-javascript-property") -> 'someJavascriptProperty'
@@ -1530,25 +1572,25 @@ const toCamelCase = str =>
 
 ### truncateString
 
-Truncates a string up to a specified length.
+将字符串截断为指定长度。
 
-Determine if the string's `length` is greater than `num`.
-Return the string truncated to the desired length, with `...` appended to the end or the original string.
+确定字符串的`length`是否大于`num`。将截断的字符串返回到所需的长度, 并将`...`追加到末尾或原始字符串。
 
 ```js
 const truncateString = (str, num) =>
-  str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
+str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
 // truncateString('boomerang', 7) -> 'boom...'
 ```
 
+## 实用
+
 [⬆ back to top](#table-of-contents)
-## Utility
 
 ### coalesce
 
-Returns the first non-null/undefined argument.
+返回第一个非空/未定义参数。
 
-Use `Array.find()` to return the first non `null`/`undefined` argument.
+使用`Array.find()`返回第一个非`null`/`undefined`的参数。
 
 ```js
 const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
@@ -1559,9 +1601,9 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
 
 ### coalesceFactory
 
-Returns a customized coalesce function that returns the first argument that returns `true` from the provided argument validation function.
+返回自定义的联合函数, 返回从提供的参数验证函数返回`true`的第一个参数。
 
-Use `Array.find()` to return the first argument that returns `true` from the provided argument validation function.
+使用`Array.find()`返回从提供的参数验证函数返回`true`的第一个参数。
 
 ```js
 const coalesceFactory = valid => (...args) => args.find(valid);
@@ -1573,28 +1615,30 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 
 ### extendHex
 
-Extends a 3-digit color code to a 6-digit color code.
+将3位色码扩展为6位色码。
 
-Use `Array.map()`, `split()` and `Array.join()` to join the mapped array for converting a 3-digit RGB notated hexadecimal color-code to the 6-digit form.
-`Array.slice()` is used to remove `#` from string start since it's added once.
+使用`Array.map()`、`split()`和`Array.join()`来加入映射数组, 将3位的 RGB notated 十六进制 color-code 转换为6位数字形式。`Array.slice()`用于从字符串启动中删除`#`
+
+, 因为它添加了一次。
+
 ```js
 const extendHex = shortHex =>
-  '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
+'#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('')
 // extendHex('#03f') -> '#0033ff'
 // extendHex('05a') -> '#0055aa'
 ```
 
 [⬆ back to top](#table-of-contents)
 
-### getType
+### gettype
 
-Returns the native type of a value.
+返回值的本机类型。
 
-Returns lowercased constructor name of value, "undefined" or "null" if value is undefined or null
+如果值未定义或为 null, 则返回小写的构造函数名称、"未定义" 或 "null"
 
 ```js
 const getType = v =>
-  v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
+v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLowerCase();
 // getType(new Set([1,2,3])) -> "set"
 ```
 
@@ -1602,16 +1646,20 @@ const getType = v =>
 
 ### hexToRGB
 
-Converts a colorcode to a `rgb()` string.
+将 colorcode 转换为`rgb()`字符串。
 
-Use bitwise right-shift operator and mask bits with `&` (and) operator to convert a hexadecimal color code (prefixed with `#`) to a string with the RGB values. In case it's a 3-digit-colorcode, do the same with the 6-digit-colorcode extended by the extendHex() function (ref. `extendHex` snippet)
+使用按位右运算符和掩码位与`&`
+
+(and) 运算符将十六进制颜色代码 (前缀为`#`) 转换为具有 RGB 值的字符串。如果它是一个3位数的 colorcode, 那么用 extendHex () 函数 (ref.
+
+`extendHex`代码段) 扩展的6位 colorcode 进行相同的处理
 
 ```js
 const hexToRgb = hex => {
-  const extendHex = shortHex =>
-    '#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('');
-  const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
-  return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex.slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(extendedHex.slice(1), 16) & 0x0000ff})`;
+const extendHex = shortHex =>
+'#' + shortHex.slice(shortHex.startsWith('#') ? 1 : 0).split('').map(x => x+x).join('');
+const extendedHex = hex.slice(hex.startsWith('#') ? 1 : 0).length === 3 ? extendHex(hex) : hex;
+return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex.slice(1), 16) & 0x00ff00) >> 8}, ${parseInt(extendedHex.slice(1), 16) & 0x0000ff})`;
 }
 // hexToRgb('#27ae60') -> 'rgb(39, 174, 96)'
 // hexToRgb('#acd') -> 'rgb(170, 204, 221)'
@@ -1621,9 +1669,9 @@ const hexToRgb = hex => {
 
 ### isArray
 
-Checks if the given argument is an array.
+检查给定参数是否为数组。
 
-Use `Array.isArray()` to check if a value is classified as an array.
+使用`Array.isArray()`检查某个值是否属于数组。
 
 ```js
 const isArray = val => !!val && Array.isArray(val);
@@ -1635,9 +1683,9 @@ const isArray = val => !!val && Array.isArray(val);
 
 ### isBoolean
 
-Checks if the given argument is a native boolean element.
+检查给定的参数是否为本机布尔元素。
 
-Use `typeof` to check if a value is classified as a boolean primitive.
+使用`typeof`检查某个值是否被归类为布尔基元。
 
 ```js
 const isBoolean = val => typeof val === 'boolean';
@@ -1649,9 +1697,9 @@ const isBoolean = val => typeof val === 'boolean';
 
 ### isFunction
 
-Checks if the given argument is a function.
+检查给定参数是否为函数。
 
-Use `typeof` to check if a value is classified as a function primitive.
+使用`typeof`检查某个值是否被归类为函数基元。
 
 ```js
 const isFunction = val => val && typeof val === 'function';
@@ -1663,9 +1711,9 @@ const isFunction = val => val && typeof val === 'function';
 
 ### isNumber
 
-Checks if the given argument is a number.
+检查给定参数是否为数字。
 
-Use `typeof` to check if a value is classified as a number primitive.
+使用`typeof`检查某个值是否归类为数字基元。
 
 ```js
 const isNumber = val => typeof val === 'number';
@@ -1677,9 +1725,9 @@ const isNumber = val => typeof val === 'number';
 
 ### isString
 
-Checks if the given argument is a string.
+检查给定参数是否为字符串。
 
-Use `typeof` to check if a value is classified as a string primitive.
+使用`typeof`检查某个值是否属于字符串基元。
 
 ```js
 const isString = val => typeof val === 'string';
@@ -1691,9 +1739,9 @@ const isString = val => typeof val === 'string';
 
 ### isSymbol
 
-Checks if the given argument is a symbol.
+检查给定参数是否为符号。
 
-Use `typeof` to check if a value is classified as a symbol primitive.
+使用`typeof`检查某个值是否被归类为符号基元。
 
 ```js
 const isSymbol = val => typeof val === 'symbol';
@@ -1705,9 +1753,9 @@ const isSymbol = val => typeof val === 'symbol';
 
 ### RGBToHex
 
-Converts the values of RGB components to a colorcode.
+将 RGB 组件的值转换为 colorcode。
 
-Convert given RGB parameters to hexadecimal string using bitwise left-shift operator (`<<`) and `toString(16)`, then `padStart(6,'0')` to get a 6-digit hexadecimal value.
+使用按位左移位运算符 (`<<`) 和`toString(16)`将给定的 RGB 参数转换为十六进制字符串, 然后`padStart(6,'0')`以获取6位十六进制值。
 
 ```js
 const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6, '0');
@@ -1718,14 +1766,14 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 
 ### timeTaken
 
-Measures the time taken by a function to execute.
+测量执行函数所用的时间。
 
-Use `console.time()` and `console.timeEnd()` to measure the difference between the start and end times to determine how long the callback took to execute.
+使用`console.time()`和`console.timeEnd()`来测量开始和结束时间之间的差异, 以确定回调执行所用的时间。
 
 ```js
 const timeTaken = callback => {
-  console.time('timeTaken');  const r = callback();
-  console.timeEnd('timeTaken');  return r;
+console.time('timeTaken');  const r = callback();
+console.timeEnd('timeTaken');  return r;
 };
 // timeTaken(() => Math.pow(2, 10)) -> 1024
 // (logged): timeTaken: 0.02099609375ms
@@ -1735,18 +1783,16 @@ const timeTaken = callback => {
 
 ### toOrdinalSuffix
 
-Adds an ordinal suffix to a number.
+将序号后缀添加到数字。
 
-Use the modulo operator (`%`) to find values of single and tens digits.
-Find which ordinal pattern digits match.
-If digit is found in teens pattern, use teens ordinal.
+使用模数运算符 (`%`) 查找单个和十位数字的值。查找匹配的序号模式数字。如果在青少年模式中发现数字, 请使用青少年序号。
 
 ```js
 const toOrdinalSuffix = num => {
-  const int = parseInt(num), digits = [(int % 10), (int % 100)],
-    ordinals = ['st', 'nd', 'rd', 'th'], oPattern = [1, 2, 3, 4],
-    tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
-  return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
+const int = parseInt(num), digits = [(int % 10), (int % 100)],
+ordinals = ['st', 'nd', 'rd', 'th'], oPattern = [1, 2, 3, 4],
+tPattern = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ordinals[digits[0] - 1] : int + ordinals[3];
 };
 // toOrdinalSuffix("123") -> "123rd"
 ```
@@ -1755,15 +1801,15 @@ const toOrdinalSuffix = num => {
 
 ### UUIDGenerator
 
-Generates a UUID.
+生成 UUID。
 
-Use `crypto` API to generate a UUID, compliant with [RFC4122](https://www.ietf.org/rfc/rfc4122.txt) version 4.
+使用`crypto`API 生成 UUID, 符合[RFC4122](https://www.microsofttranslator.com/bv.aspx?from=&to=zh-CHS&a=https%3A%2F%2Fwww.ietf.org%2Frfc%2Frfc4122.txt)版本4。
 
 ```js
 const UUIDGenerator = () =>
-  ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
-  );
+([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
+(c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+);
 // UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
@@ -1771,10 +1817,17 @@ const UUIDGenerator = () =>
 
 ### validateEmail
 
-Returns `true` if the given string is a valid  email, `false` otherwise.
+如果给定的字符串是有效的电子邮件, 则返回`true`
 
-Use a regular expression to check if the email is valid.
-Returns `true` if email is valid, `false` if not.
+, 否则为`false`
+
+。
+
+使用正则表达式检查电子邮件是否有效。如果电子邮件有效, 则返回 true, 如果没有, 则`true`
+
+`false`
+
+。
 
 ```js
 const validateEmail = str =>
@@ -1786,20 +1839,31 @@ const validateEmail = str =>
 
 ### validateNumber
 
-Returns `true` if the given value is a number, `false` otherwise.
+如果给定值为数字, 则返回`true`
 
-Use `!isNaN` in combination with `parseFloat()` to check if the argument is a number.
-Use `isFinite()` to check if the number is finite.
-Use `Number()` to check if the coercion holds.
+, 否则为`false`
+
+。
+
+将`!isNaN`与`parseFloat()`结合使用, 以检查参数是否为数字。使用`isFinite()`检查数字是否是有限的。使用`Number()`检查强制是否保持。
 
 ```js
 const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) == n;
 // validateNumber('10') -> true
 ```
 
-[⬆ back to top](#table-of-contents)
-
 ## Credits
 
-*Icons made by [Smashicons](https://www.flaticon.com/authors/smashicons) from [www.flaticon.com](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+*Icons made by
 
+[Smashicons](https://www.flaticon.com/authors/smashicons)
+
+from
+
+[www.flaticon.com](https://www.flaticon.com/)
+
+is licensed by
+
+[CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+
+再次声明：有需要转载请保留头部信息，有问题可以联系我的微信，caibaojian89
