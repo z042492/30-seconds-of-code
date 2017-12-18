@@ -7,7 +7,7 @@
 - 欢迎投稿, 请阅读[投稿指南](CONTRIBUTING.md)。
 - 代码段是在 ES6 中编写的, 请使用[Babel transpiler](https://babeljs.io/)确保向后兼容。
 
-本文来自github上的 30-seconds-of-code 项目，作者分享了大量有用的Javascript片段,你可以在30秒或更少时间中理解。本文为中文版翻译，下面一起来看看有哪些精彩的JavaScript代码值得收藏。
+感谢作者分享了大量有用的Javascript片段,你可以在30秒或更少时间中理解。本文为中文版翻译，下面一起来看看有哪些精彩的JavaScript代码值得收藏。
 
 原文：[https://github.com/Chalarangelo/30-seconds-of-code](https://github.com/Chalarangelo/30-seconds-of-code)
 
@@ -151,7 +151,7 @@
 
 ## 数组
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### arrayMax
 
@@ -164,7 +164,7 @@ const arrayMax = arr => Math.max(...arr);
 // arrayMax([10, 1, 5]) -> 10
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### arrayMin
 
@@ -177,7 +177,7 @@ const arrayMin = arr => Math.min(...arr);
 // arrayMin([10, 1, 5]) -> 1
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### chunk
 
@@ -191,24 +191,20 @@ Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size,
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### compact
 
 从数组中移除 falsey 值。
 
-使用`Array.filter()`筛选出 falsey 值 (`false`、`null`、
-
-`0`、
-
-`""`、`undefined`和`NaN`).
+使用`Array.filter()`筛选出 falsey 值 (`false`、`null`、`0`、`""`、`undefined`和`NaN`).
 
 ```js
 const compact = (arr) => arr.filter(Boolean);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### countOccurrences
 
@@ -221,7 +217,7 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 // countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### deepFlatten
 
@@ -234,41 +230,33 @@ const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlat
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### difference
 
 返回两个数组之间的差异。
 
-从`b`创建`Set`
-
-, 然后使用`Array.filter()`
-
-on 只保留`a`
-
-`b`中不包含的值.
+从`b`创建`Set`, 然后使用`Array.filter()` on 只保留`a` `b`中不包含的值.
 
 ```js
 const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has(x)); };
 // difference([1,2,3], [1,2,4]) -> [3]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### distinctValuesOfArray
 
 返回数组的所有不同值。
 
-使用 ES6
-
-`Set`和`...rest`运算符放弃所有重复的值。
+使用 ES6 `Set`和`...rest`运算符放弃所有重复的值。
 
 ```js
 const distinctValuesOfArray = arr => [...new Set(arr)];
 // distinctValuesOfArray([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### dropElements
 
@@ -283,7 +271,7 @@ return arr;
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### everyNth
 
@@ -296,22 +284,20 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
 // everyNth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### filterNonUnique
 
 筛选出数组中的非唯一值。
 
-对于只包含唯一值的数组, 请使用`Array.filter()`
-
-。
+对于只包含唯一值的数组, 请使用`Array.filter()`。
 
 ```js
 const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexOf(i));
 // filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### flatten
 
@@ -324,7 +310,7 @@ const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
 // flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### flattenDepth
 
@@ -339,7 +325,7 @@ depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, de
 // flattenDepth([1,[2],[[[3],4],5]], 2) -> [1,2,[3],4,5]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### groupby
 
@@ -355,7 +341,7 @@ arr.map(typeof func === 'function' ? func : val => val[func])
 // groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### head
 
@@ -368,22 +354,20 @@ const head = arr => arr[0];
 // head([1,2,3]) -> 1
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### initial
 
 返回除最后一个数组之外的所有元素。
 
-使用 "
-
-`arr.slice(0,-1)`" 返回数组的最后一个元素。
+使用 "`arr.slice(0,-1)`" 返回数组的最后一个元素。
 
 ```js
 const initial = arr => arr.slice(0, -1);
 // initial([1,2,3]) -> [1,2]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### initializeArrayWithRange
 
@@ -397,41 +381,33 @@ Array.from({ length: end - start }).map((v, i) => i + start);
 // initializeArrayWithRange(5) -> [0,1,2,3,4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### initializeArrayWithValues
 
 初始化并填充具有指定值的数组。
 
-使用`Array(n)`创建所需长度的数组,
-
-`fill(v)`以填充所需的值。可以省略`value`以使用默认值`0`.
+使用`Array(n)`创建所需长度的数组,`fill(v)`以填充所需的值。可以省略`value`以使用默认值`0`.
 
 ```js
 const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 // initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### intersection
 
 返回两个数组中存在的元素的列表。
 
-从`b`创建`Set`
-
-, 然后使用`Array.filter()`
-
-on
-
-`a`只保留`b`中包含的值.
+从`b`创建`Set`, 然后使用`Array.filter()`on `a`只保留`b`中包含的值.
 
 ```js
 const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.has(x)); };
 // intersection([1,2,3], [4,3,2]) -> [2,3]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### last
 
@@ -444,7 +420,7 @@ const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### mapObject
 
@@ -461,7 +437,7 @@ squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
 */
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### nthElement
 
@@ -475,7 +451,7 @@ const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
 // nthElement(['a','b','b'],-3) -> 'a'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### pick
 
@@ -489,15 +465,13 @@ arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
 // pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### pull
 
 对原始数组进行变异, 以筛选出指定的值。
 
-使用`Array.filter()`和`Array.includes()`来拉出不需要的值。使用`Array.length = 0`可将传入的数组中的长度重置为零, 并将其设置为`Array.push()`
-
-, 以便仅使用所提取的值填充它。
+使用`Array.filter()`和`Array.includes()`来拉出不需要的值。使用`Array.length = 0`可将传入的数组中的长度重置为零, 并将其设置为`Array.push()`, 以便仅使用所提取的值填充它。
 
 ```js
 const pull = (arr, ...args) => {
@@ -509,16 +483,12 @@ arr.length = 0; pulled.forEach(v => arr.push(v));
 // console.log(myArray) -> [ 'b', 'b' ]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### remove
 
 从数组中移除给定函数返回`false`的元素.
-使用`Array.filter()`查找返回 truthy 值的数组元素和`Array.reduce()`以使用`Array.splice()`删除元素。使用三参数 (
-
-`func`
-
-`value, index, array`调用函数).
+使用`Array.filter()`查找返回 truthy 值的数组元素和`Array.reduce()`以使用`Array.splice()`删除元素。使用三参数 (`func` `value, index, array`调用函数).
 
 ```js
 const remove = (arr, func) =>
@@ -529,7 +499,7 @@ arr.splice(arr.indexOf(val), 1); return acc.concat(val);
 // remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### sample
 
@@ -542,7 +512,7 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 // sample([3, 7, 9, 11]) -> 9
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### shuffle
 
@@ -555,7 +525,7 @@ const shuffle = arr => arr.sort(() => Math.random() - 0.5);
 // shuffle([1,2,3]) -> [2,3,1]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### similarity
 
@@ -568,17 +538,13 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 // similarity([1,2,3], [1,2,4]) -> [1,2]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### symmetricDifference
 
 返回两个数组之间的对称差。
 
-从每个数组创建一个`Set`
-
-, 然后对它们中的每一个都使用`Array.filter()`
-
-, 以便只保留其他值中不包含的数值。
+从每个数组创建一个`Set`, 然后对它们中的每一个都使用`Array.filter()`, 以便只保留其他值中不包含的数值。
 
 ```js
 const symmetricDifference = (a, b) => {
@@ -588,15 +554,13 @@ return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 // symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### tail
 
 返回数组中的所有元素, 除第一个。
 
-如果数组的`length`大于`1`, 则返回`arr.slice(1)`
-
-, 否则返回整个数组。
+如果数组的`length`大于`1`, 则返回`arr.slice(1)`, 否则返回整个数组。
 
 ```js
 const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
@@ -604,7 +568,7 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1]) -> [1]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### take
 
@@ -618,7 +582,7 @@ const take = (arr, n = 1) => arr.slice(0, n);
 // take([1, 2, 3], 0) -> []
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### takeRight
 
@@ -632,22 +596,20 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 // takeRight([1, 2, 3]) -> [3]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### union
 
 返回在两个数组中的任意一个中存在的每个元素。
 
-创建一个`Set`
-
-, 其中包含`a`和`b`的所有值, 并将其转换为数组。
+创建一个`Set`, 其中包含`a`和`b`的所有值, 并将其转换为数组。
 
 ```js
 const union = (a, b) => Array.from(new Set([...a, ...b]));
 // union([1,2,3], [4,3,2]) -> [1,2,3,4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### without
 
@@ -660,7 +622,7 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 // without([2, 1, 2, 3], 1, 2) -> [3]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### zip
 
@@ -681,19 +643,13 @@ return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
 
 ## 浏览器
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### bottomVisible
 
-如果页的底部可见, 则返回`true`
+如果页的底部可见, 则返回`true`, 否则为`false`。
 
-, 否则为`false`
-
-。
-
-使用`scrollY`、
-
-`scrollHeight`和`clientHeight`来确定页面底部是否可见。
+使用`scrollY`、`scrollHeight`和`clientHeight`来确定页面底部是否可见。
 
 ```js
 const bottomVisible = () =>
@@ -701,7 +657,7 @@ document.documentElement.clientHeight + window.scrollY >= document.documentEleme
 // bottomVisible() -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### currentURL
 
@@ -714,15 +670,11 @@ const currentURL = () => window.location.href;
 // currentUrl() -> 'https://google.com'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### elementIsVisibleInViewport
 
-如果指定的元素在视区中可见, 则返回`true`
-
-, 否则为`false`
-
-。
+如果指定的元素在视区中可见, 则返回`true`, 否则为`false`。
 
 使用`Element.getBoundingClientRect()`和`window.inner(Width|Height)`值以确定给定元素在视区中是否可见。省略第二个参数以确定该元素是否完全可见, 或指定`true`以确定它是否部分可见。
 
@@ -739,15 +691,13 @@ return partiallyVisible
 // elementIsVisibleInViewport(el, true) -> true (partially visible)
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### getScrollPosition
 
 返回当前页的滚动位置。
 
-如果已定义, 则使用`pageXOffset`和`pageYOffset`
-
-, 否则`scrollLeft`和`scrollTop`。可以省略`el`以使用`window`的默认值.
+如果已定义, 则使用`pageXOffset`和`pageYOffset`, 否则`scrollLeft`和`scrollTop`。可以省略`el`以使用`window`的默认值.
 
 ```js
 const getScrollPosition = (el = window) =>
@@ -756,15 +706,13 @@ y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
 // getScrollPosition() -> {x: 0, y: 200}
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### getURLParameters
 
 返回一个包含当前 URL 参数的对象。
 
-使用`match()`与适当的正则表达式来获取所有键值对,
-
-`Array.reduce()`可将它们映射并合并到单个对象中。将`location.search`作为要应用于当前`url`的参数传递.
+使用`match()`与适当的正则表达式来获取所有键值对,`Array.reduce()`可将它们映射并合并到单个对象中。将`location.search`作为要应用于当前`url`的参数传递.
 
 ```js
 const getURLParameters = url =>
@@ -774,15 +722,13 @@ url.match(/([^?=&]+)(=([^&]*))/g).reduce(
 // getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### redirect
 
 重定向到指定的 URL。
 
-使用`window.location.href`或`window.location.replace()`重定向到`url`。传递第二个参数以模拟链接单击 (`true`
-
--默认值) 或 HTTP 重定向 (`false`).
+使用`window.location.href`或`window.location.replace()`重定向到`url`。传递第二个参数以模拟链接单击 (`true`-默认值) 或 HTTP 重定向 (`false`).
 
 ```js
 const redirect = (url, asLink = true) =>
@@ -790,7 +736,7 @@ asLink ? window.location.href = url : window.location.replace(url);
 // redirect('https://google.com')
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### scrollToTop
 
@@ -811,7 +757,7 @@ window.scrollTo(0, c - c / 8);
 
 ## 日期
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### getDaysDiffBetweenDates
 
@@ -824,7 +770,7 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 // getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### JSONToDate
 
@@ -840,7 +786,7 @@ return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
 // JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### toEnglishDate
 
@@ -856,15 +802,13 @@ const toEnglishDate  = (time) =>
 
 ## 功能
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### chainAsync
 
 链异步函数。
 
-循环遍历包含异步事件的函数数组, 当每个异步事件完成时调用`next`
-
-。
+循环遍历包含异步事件的函数数组, 当每个异步事件完成时调用`next`。
 
 ```js
 const chainAsync = fns => { let curr = 0; const next = () => fns[curr++](next); next(); };
@@ -877,7 +821,7 @@ chainAsync([
 */
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### compose
 
@@ -895,19 +839,13 @@ multiplyAndAdd5(5, 2) -> 15
 */
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### curry
 
 Curries a function.
 
-使用递归。如果提供的参数 (变量) 的数量足够, 请调用传递的函数`args`
-
-`f`。否则, 返回需要其余参数的扩充函数`f`
-
-。如果你想咖喱一个函数, 接受可变数目的参数 (如`Math.min()`), 可以选择将参数的个数传递到第二个参数`arity`
-
-(可变函数).
+使用递归。如果提供的参数 (变量) 的数量足够, 请调用传递的函数`args` `f`。否则, 返回需要其余参数的扩充函数`f`。如果你想咖喱一个函数, 接受可变数目的参数 (如`Math.min()`), 可以选择将参数的个数传递到第二个参数`arity`(可变函数).
 
 ```js
 const curry = (fn, arity = fn.length, ...args) =>
@@ -918,7 +856,7 @@ arity <= args.length
 // curry(Math.min, 3)(10)(50)(2) -> 2
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### functionName
 
@@ -931,7 +869,7 @@ const functionName = fn => (console.debug(fn.name), fn);
 // functionName(Math.max) -> max (logged in debug channel of console)
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### pipe
 
@@ -949,14 +887,14 @@ multiplyAndAdd5(5, 2) -> 15
 */
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### promisify
 
 转换异步函数以返回一个承诺。
 
 使用讨好返回一个返回调用原始函数的`Promise`的函数。使用`...rest`运算符传入所有参数。
-*在节点 8 + 中, 可以使用 [`util.promisify`](https://www.microsofttranslator.com/bv.aspx?from=&to=zh-CHS&a=https%3A%2F%2Fnodejs.org%2Fapi%2Futil.html%23util_util_promisify_original)*
+*在节点 8 + 中, 可以使用 `util.promisify`*
 
 ```js
 const promisify = func =>
@@ -969,7 +907,7 @@ err ? reject(err) : resolve(result))
 // delay(2000).then(() => console.log('Hi!')) -> Promise resolves after 2s
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### runPromisesInSeries
 
@@ -983,7 +921,7 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 // runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### sleep
 
@@ -1004,7 +942,7 @@ async function sleepyWork() {
 
 ## 数学
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### arrayAverage
 
@@ -1017,7 +955,7 @@ const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 // arrayAverage([1,2,3]) -> 2
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### arraySum
 
@@ -1030,7 +968,7 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 // arraySum([1,2,3,4]) -> 10
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### collatz
 
@@ -1044,7 +982,7 @@ const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 // collatz(5) --> 16
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### collatz
 
@@ -1057,7 +995,7 @@ const digitize = n => [...''+n].map(i => parseInt(i));
 // digitize(2334) -> [2, 3, 3, 4]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### digitize
 
@@ -1070,7 +1008,7 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 // distance(1,1, 2,3) -> 2.23606797749979
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### distance
 
@@ -1085,7 +1023,7 @@ n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
 // factorial(6) -> 720
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### fibonacci
 
@@ -1099,7 +1037,7 @@ Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i -
 // fibonacci(5) -> [0,1,1,2,3]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### gcd
 
@@ -1112,7 +1050,7 @@ const gcd = (x, y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### hammingDistance
 
@@ -1126,7 +1064,7 @@ const hammingDistance = (num1, num2) =>
 // hammingDistance(2,3) -> 1
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isDivisible
 
@@ -1139,28 +1077,20 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 // isDivisible(6,3) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### iseven
 
-如果给定的数字为偶数, 则返回`true`
+如果给定的数字为偶数, 则返回`true`, 否则为`false`。
 
-, 否则为`false`
-
-。
-
-检查一个数字是奇数还是使用模数 (`%`) 运算符。如果数字为偶数, 则返回`true`
-
-, 如果数字为奇数, 则为`false`
-
-。
+检查一个数字是奇数还是使用模数 (`%`) 运算符。如果数字为偶数, 则返回`true`, 如果数字为奇数, 则为`false`。
 
 ```js
 const isEven = num => num % 2 === 0;
 // isEven(3) -> false
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### lcm
 
@@ -1176,7 +1106,7 @@ return Math.abs(x*y)/(gcd(x,y));
 // lcm(12,7) -> 84
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### median
 
@@ -1193,21 +1123,13 @@ return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 // median([0,10,-2,7]) -> 3.5
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### palindrome
 
-如果给定字符串为回文, 则返回`true`
+如果给定字符串为回文, 则返回`true`, 否则为`false`。
 
-, 否则为`false`
-
-。
-
-转换字符串`toLowerCase()`并使用`replace()`从其中删除非字母数字字符。然后,`split('')`到各个字符,`reverse()`,
-
-`join('')`
-
-, 并将其与原始的、不可逆转的字符串进行比较, 然后将其转换为`tolowerCase()`.
+转换字符串`toLowerCase()`并使用`replace()`从其中删除非字母数字字符。然后,`split('')`到各个字符,`reverse()`,`join('')`, 并将其与原始的、不可逆转的字符串进行比较, 然后将其转换为`tolowerCase()`.
 
 ```js
 const palindrome = str => {
@@ -1217,7 +1139,7 @@ return s === s.split('').reverse().join('');
 // palindrome('taco cat') -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### percentile
 
@@ -1231,7 +1153,7 @@ const percentile = (arr, val) =>
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### powerset
 
@@ -1245,7 +1167,7 @@ arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### randomIntegerInRange
 
@@ -1258,7 +1180,7 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 // randomIntegerInRange(0, 5) -> 2
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### randomNumberInRange
 
@@ -1271,7 +1193,7 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 // randomNumberInRange(2,10) -> 6.0211363285087005
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### round
 
@@ -1284,7 +1206,7 @@ const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${de
 // round(1.005, 2) -> 1.01
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### standardDeviation
 
@@ -1306,14 +1228,13 @@ arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
 
 ## 媒体
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### speechSynthesis
 
 执行语音合成 (实验)。
 
-使用`SpeechSynthesisUtterance.voice`和`window.speechSynthesis.getVoices()`将邮件转换为语音。使用`window.speechSynthesis.speak()`播放该消息。
-了解有关[Web 语音 API 的 SpeechSynthesisUtterance 接口的](https://www.microsofttranslator.com/bv.aspx?from=&to=zh-CHS&a=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FAPI%2FSpeechSynthesisUtterance)详细信息.
+使用`SpeechSynthesisUtterance.voice`和`window.speechSynthesis.getVoices()`将邮件转换为语音。使用`window.speechSynthesis.speak()`播放该消息。了解有关Web 语音 API 的 SpeechSynthesisUtterance 接口的详细信息.
 
 ```js
 const speechSynthesis = message => {
@@ -1326,7 +1247,7 @@ window.speechSynthesis.speak(msg);
 
 ## 节点
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### JSONToFile
 
@@ -1340,7 +1261,7 @@ const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stri
 // JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### readFileLines
 
@@ -1364,7 +1285,7 @@ console.log(arr) // -> ['line1', 'line2', 'line3']
 
 ## 对象
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### cleanObj
 
@@ -1389,7 +1310,7 @@ delete obj[key];
 */
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### objectFromPairs
 
@@ -1402,7 +1323,7 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### objectToPairs
 
@@ -1415,7 +1336,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 // objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### shallowClone
 
@@ -1432,7 +1353,7 @@ a === b -> false
 */
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### truthCheckCollection
 
@@ -1447,7 +1368,7 @@ truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
 
 ## 字符串
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### anagrams
 
@@ -1464,7 +1385,7 @@ acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### Capitalize
 
@@ -1481,7 +1402,7 @@ first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 // capitalize('myName', true) -> 'Myname'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### capitalizeEveryWord
 
@@ -1494,7 +1415,7 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 // capitalizeEveryWord('hello world!') -> 'Hello World!'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### escapeRegExp
 
@@ -1507,7 +1428,7 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // escapeRegExp('(test)') -> \\(test\\)
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### fromCamelCase
 
@@ -1524,7 +1445,7 @@ str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
 // fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### reverseString
 
@@ -1537,7 +1458,7 @@ const reverseString = str => [...str].reverse().join('');
 // reverseString('foobar') -> 'raboof'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### sortCharactersInString
 
@@ -1551,7 +1472,7 @@ str.split('').sort((a, b) => a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -> 'aabbceg'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### toCamelCase
 
@@ -1568,7 +1489,7 @@ str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpper
 // toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### truncateString
 
@@ -1584,7 +1505,7 @@ str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
 
 ## 实用
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### coalesce
 
@@ -1597,7 +1518,7 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
 // coalesce(null,undefined,"",NaN, "Waldo") -> ""
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### coalesceFactory
 
@@ -1611,15 +1532,13 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 // customCoalesce(undefined, null, NaN, "", "Waldo") //-> "Waldo"
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### extendHex
 
 将3位色码扩展为6位色码。
 
-使用`Array.map()`、`split()`和`Array.join()`来加入映射数组, 将3位的 RGB notated 十六进制 color-code 转换为6位数字形式。`Array.slice()`用于从字符串启动中删除`#`
-
-, 因为它添加了一次。
+使用`Array.map()`、`split()`和`Array.join()`来加入映射数组, 将3位的 RGB notated 十六进制 color-code 转换为6位数字形式。`Array.slice()`用于从字符串启动中删除`#`, 因为它添加了一次。
 
 ```js
 const extendHex = shortHex =>
@@ -1628,7 +1547,7 @@ const extendHex = shortHex =>
 // extendHex('05a') -> '#0055aa'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### gettype
 
@@ -1642,7 +1561,7 @@ v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLower
 // getType(new Set([1,2,3])) -> "set"
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### hexToRGB
 
@@ -1665,7 +1584,7 @@ return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex
 // hexToRgb('#acd') -> 'rgb(170, 204, 221)'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isArray
 
@@ -1679,7 +1598,7 @@ const isArray = val => !!val && Array.isArray(val);
 // isArray([1]) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isBoolean
 
@@ -1693,7 +1612,7 @@ const isBoolean = val => typeof val === 'boolean';
 // isBoolean(false) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isFunction
 
@@ -1707,7 +1626,7 @@ const isFunction = val => val && typeof val === 'function';
 // isFunction(x => x) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isNumber
 
@@ -1721,7 +1640,7 @@ const isNumber = val => typeof val === 'number';
 // isNumber(1) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isString
 
@@ -1735,7 +1654,7 @@ const isString = val => typeof val === 'string';
 // isString('10') -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### isSymbol
 
@@ -1749,7 +1668,7 @@ const isSymbol = val => typeof val === 'symbol';
 // isSymbol(Symbol('x')) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### RGBToHex
 
@@ -1762,7 +1681,7 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 // RGBToHex(255, 165, 1) -> 'ffa501'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### timeTaken
 
@@ -1779,7 +1698,7 @@ console.timeEnd('timeTaken');  return r;
 // (logged): timeTaken: 0.02099609375ms
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### toOrdinalSuffix
 
@@ -1797,13 +1716,13 @@ return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ord
 // toOrdinalSuffix("123") -> "123rd"
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### UUIDGenerator
 
 生成 UUID。
 
-使用`crypto`API 生成 UUID, 符合[RFC4122](https://www.microsofttranslator.com/bv.aspx?from=&to=zh-CHS&a=https%3A%2F%2Fwww.ietf.org%2Frfc%2Frfc4122.txt)版本4。
+使用`crypto`API 生成 UUID, 符合RFC4122版本4。
 
 ```js
 const UUIDGenerator = () =>
@@ -1813,15 +1732,11 @@ const UUIDGenerator = () =>
 // UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### validateEmail
 
-如果给定的字符串是有效的电子邮件, 则返回`true`
-
-, 否则为`false`
-
-。
+如果给定的字符串是有效的电子邮件, 则返回`true`, 否则为`false`。
 
 使用正则表达式检查电子邮件是否有效。如果电子邮件有效, 则返回 true, 如果没有, 则`true`
 
@@ -1835,15 +1750,11 @@ const validateEmail = str =>
 // validateEmail(mymail@gmail.com) -> true
 ```
 
-[⬆ back to top](#table-of-contents)
+[⬆ 返回顶部](#table-of-contents)
 
 ### validateNumber
 
-如果给定值为数字, 则返回`true`
-
-, 否则为`false`
-
-。
+如果给定值为数字, 则返回`true`, 否则为`false`。
 
 将`!isNaN`与`parseFloat()`结合使用, 以检查参数是否为数字。使用`isFinite()`检查数字是否是有限的。使用`Number()`检查强制是否保持。
 
@@ -1854,16 +1765,6 @@ const validateNumber = n => !isNaN(parseFloat(n)) && isFinite(n) && Number(n) ==
 
 ## Credits
 
-*Icons made by
-
-[Smashicons](https://www.flaticon.com/authors/smashicons)
-
-from
-
-[www.flaticon.com](https://www.flaticon.com/)
-
-is licensed by
-
-[CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
+*Icons made by[Smashicons](https://www.flaticon.com/authors/smashicons)from[www.flaticon.com](https://www.flaticon.com/)is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/).*
 
 再次声明：有需要转载请保留头部信息，有问题可以联系我的微信，caibaojian89
