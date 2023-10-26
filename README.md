@@ -13,9 +13,9 @@
 
 作者：[Chalarangelo](https://github.com/Chalarangelo)
 
-翻译：[http://caibaojian.com/30-seconds-of-code.html](http://caibaojian.com/30-seconds-of-code.html)
+翻译：[https://qdkfweb.cn/30-seconds-of-code.html](https://qdkfweb.cn/30-seconds-of-code.html)
 
-译者：[蔡宝坚](http://caibaojian.com/)
+译者：[蔡宝坚](https://qdkfweb.cn/)
 
 本文翻译为前端开发博客所有，如有需要转载，请详细注明以上信息。
 
@@ -151,7 +151,7 @@
 
 ## 数组
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### arrayMax
 
@@ -164,7 +164,7 @@ const arrayMax = arr => Math.max(...arr);
 // arrayMax([10, 1, 5]) -> 10
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### arrayMin
 
@@ -177,7 +177,7 @@ const arrayMin = arr => Math.min(...arr);
 // arrayMin([10, 1, 5]) -> 1
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### chunk
 
@@ -191,7 +191,7 @@ Array.from({length: Math.ceil(arr.length / size)}, (v, i) => arr.slice(i * size,
 // chunk([1,2,3,4,5], 2) -> [[1,2],[3,4],[5]]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### compact
 
@@ -204,7 +204,7 @@ const compact = (arr) => arr.filter(Boolean);
 // compact([0, 1, false, 2, '', 3, 'a', 'e'*23, NaN, 's', 34]) -> [ 1, 2, 3, 'a', 's', 34 ]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### countOccurrences
 
@@ -217,7 +217,7 @@ const countOccurrences = (arr, value) => arr.reduce((a, v) => v === value ? a + 
 // countOccurrences([1,1,2,1,2,3], 1) -> 3
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### deepFlatten
 
@@ -230,7 +230,7 @@ const deepFlatten = arr => [].concat(...arr.map(v => Array.isArray(v) ? deepFlat
 // deepFlatten([1,[2],[[3],4],5]) -> [1,2,3,4,5]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### difference
 
@@ -243,7 +243,7 @@ const difference = (a, b) => { const s = new Set(b); return a.filter(x => !s.has
 // difference([1,2,3], [1,2,4]) -> [3]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### distinctValuesOfArray
 
@@ -256,7 +256,7 @@ const distinctValuesOfArray = arr => [...new Set(arr)];
 // distinctValuesOfArray([1,2,2,3,4,4,5]) -> [1,2,3,4,5]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### dropElements
 
@@ -271,7 +271,7 @@ return arr;
 // dropElements([1, 2, 3, 4], n => n >= 3) -> [3,4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### everyNth
 
@@ -284,7 +284,7 @@ const everyNth = (arr, nth) => arr.filter((e, i) => i % nth === 0);
 // everyNth([1,2,3,4,5,6], 2) -> [ 1, 3, 5 ]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### filterNonUnique
 
@@ -297,7 +297,7 @@ const filterNonUnique = arr => arr.filter(i => arr.indexOf(i) === arr.lastIndexO
 // filterNonUnique([1,2,2,3,4,4,5]) -> [1,3,5]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### flatten
 
@@ -310,7 +310,7 @@ const flatten = arr => arr.reduce((a, v) => a.concat(v), []);
 // flatten([1,[2],3,4]) -> [1,2,3,4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### flattenDepth
 
@@ -325,7 +325,7 @@ depth != 1 ? arr.reduce((a, v) => a.concat(Array.isArray(v) ? flattenDepth(v, de
 // flattenDepth([1,[2],[[[3],4],5]], 2) -> [1,2,[3],4,5]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### groupby
 
@@ -341,7 +341,7 @@ arr.map(typeof func === 'function' ? func : val => val[func])
 // groupBy(['one', 'two', 'three'], 'length') -> {3: ['one', 'two'], 5: ['three']}
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### head
 
@@ -354,7 +354,7 @@ const head = arr => arr[0];
 // head([1,2,3]) -> 1
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### initial
 
@@ -367,7 +367,7 @@ const initial = arr => arr.slice(0, -1);
 // initial([1,2,3]) -> [1,2]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### initializeArrayWithRange
 
@@ -381,7 +381,7 @@ Array.from({ length: end - start }).map((v, i) => i + start);
 // initializeArrayWithRange(5) -> [0,1,2,3,4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### initializeArrayWithValues
 
@@ -394,7 +394,7 @@ const initializeArrayWithValues = (n, value = 0) => Array(n).fill(value);
 // initializeArrayWithValues(5, 2) -> [2,2,2,2,2]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### intersection
 
@@ -407,7 +407,7 @@ const intersection = (a, b) => { const s = new Set(b); return a.filter(x => s.ha
 // intersection([1,2,3], [4,3,2]) -> [2,3]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### last
 
@@ -420,7 +420,7 @@ const last = arr => arr[arr.length - 1];
 // last([1,2,3]) -> 3
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### mapObject
 
@@ -437,7 +437,7 @@ squareIt([1,2,3]) // { 1: 1, 2: 4, 3: 9 }
 */
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### nthElement
 
@@ -451,7 +451,7 @@ const nthElement = (arr, n=0) => (n>0? arr.slice(n,n+1) : arr.slice(n))[0];
 // nthElement(['a','b','b'],-3) -> 'a'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### pick
 
@@ -465,7 +465,7 @@ arr.reduce((acc, curr) => (curr in obj && (acc[curr] = obj[curr]), acc), {});
 // pick({ 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']) -> { 'a': 1, 'c': 3 }
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### pull
 
@@ -483,7 +483,7 @@ arr.length = 0; pulled.forEach(v => arr.push(v));
 // console.log(myArray) -> [ 'b', 'b' ]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### remove
 
@@ -499,7 +499,7 @@ arr.splice(arr.indexOf(val), 1); return acc.concat(val);
 // remove([1, 2, 3, 4], n => n % 2 == 0) -> [2, 4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### sample
 
@@ -512,7 +512,7 @@ const sample = arr => arr[Math.floor(Math.random() * arr.length)];
 // sample([3, 7, 9, 11]) -> 9
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### shuffle
 
@@ -525,7 +525,7 @@ const shuffle = arr => arr.sort(() => Math.random() - 0.5);
 // shuffle([1,2,3]) -> [2,3,1]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### similarity
 
@@ -538,7 +538,7 @@ const similarity = (arr, values) => arr.filter(v => values.includes(v));
 // similarity([1,2,3], [1,2,4]) -> [1,2]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### symmetricDifference
 
@@ -554,7 +554,7 @@ return [...a.filter(x => !sB.has(x)), ...b.filter(x => !sA.has(x))];
 // symmetricDifference([1,2,3], [1,2,4]) -> [3,4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### tail
 
@@ -568,7 +568,7 @@ const tail = arr => arr.length > 1 ? arr.slice(1) : arr;
 // tail([1]) -> [1]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### take
 
@@ -582,7 +582,7 @@ const take = (arr, n = 1) => arr.slice(0, n);
 // take([1, 2, 3], 0) -> []
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### takeRight
 
@@ -596,7 +596,7 @@ const takeRight = (arr, n = 1) => arr.slice(arr.length - n, arr.length);
 // takeRight([1, 2, 3]) -> [3]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### union
 
@@ -609,7 +609,7 @@ const union = (a, b) => Array.from(new Set([...a, ...b]));
 // union([1,2,3], [4,3,2]) -> [1,2,3,4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### without
 
@@ -622,7 +622,7 @@ const without = (arr, ...args) => arr.filter(v => !args.includes(v));
 // without([2, 1, 2, 3], 1, 2) -> [3]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### zip
 
@@ -643,7 +643,7 @@ return Array.from({length: arrays.length}, (_, k) => arrays[k][i]);
 
 ## 浏览器
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### bottomVisible
 
@@ -657,7 +657,7 @@ document.documentElement.clientHeight + window.scrollY >= document.documentEleme
 // bottomVisible() -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### currentURL
 
@@ -670,7 +670,7 @@ const currentURL = () => window.location.href;
 // currentUrl() -> 'https://google.com'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### elementIsVisibleInViewport
 
@@ -691,7 +691,7 @@ return partiallyVisible
 // elementIsVisibleInViewport(el, true) -> true (partially visible)
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### getScrollPosition
 
@@ -706,7 +706,7 @@ y: (el.pageYOffset !== undefined) ? el.pageYOffset : el.scrollTop});
 // getScrollPosition() -> {x: 0, y: 200}
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### getURLParameters
 
@@ -722,7 +722,7 @@ url.match(/([^?=&]+)(=([^&]*))/g).reduce(
 // getURLParameters('http://url.com/page?name=Adam&surname=Smith') -> {name: 'Adam', surname: 'Smith'}
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### redirect
 
@@ -736,7 +736,7 @@ asLink ? window.location.href = url : window.location.replace(url);
 // redirect('https://google.com')
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### scrollToTop
 
@@ -757,7 +757,7 @@ window.scrollTo(0, c - c / 8);
 
 ## 日期
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### getDaysDiffBetweenDates
 
@@ -770,7 +770,7 @@ const getDaysDiffBetweenDates = (dateInitial, dateFinal) => (dateFinal - dateIni
 // getDaysDiffBetweenDates(new Date("2017-12-13"), new Date("2017-12-22")) -> 9
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### JSONToDate
 
@@ -786,7 +786,7 @@ return `${ dt.getDate() }/${ dt.getMonth() + 1 }/${ dt.getFullYear() }`
 // JSONToDate(/Date(1489525200000)/) -> "14/3/2017"
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### toEnglishDate
 
@@ -802,7 +802,7 @@ const toEnglishDate  = (time) =>
 
 ## 功能
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### chainAsync
 
@@ -821,7 +821,7 @@ chainAsync([
 */
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### compose
 
@@ -839,7 +839,7 @@ multiplyAndAdd5(5, 2) -> 15
 */
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### curry
 
@@ -856,7 +856,7 @@ arity <= args.length
 // curry(Math.min, 3)(10)(50)(2) -> 2
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### functionName
 
@@ -869,7 +869,7 @@ const functionName = fn => (console.debug(fn.name), fn);
 // functionName(Math.max) -> max (logged in debug channel of console)
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### pipe
 
@@ -887,7 +887,7 @@ multiplyAndAdd5(5, 2) -> 15
 */
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### promisify
 
@@ -907,7 +907,7 @@ err ? reject(err) : resolve(result))
 // delay(2000).then(() => console.log('Hi!')) -> Promise resolves after 2s
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### runPromisesInSeries
 
@@ -921,7 +921,7 @@ const runPromisesInSeries = ps => ps.reduce((p, next) => p.then(next), Promise.r
 // runPromisesInSeries([() => delay(1000), () => delay(2000)]) -> executes each promise sequentially, taking a total of 3 seconds to complete
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### sleep
 
@@ -942,7 +942,7 @@ async function sleepyWork() {
 
 ## 数学
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### arrayAverage
 
@@ -955,7 +955,7 @@ const arrayAverage = arr => arr.reduce((acc, val) => acc + val, 0) / arr.length;
 // arrayAverage([1,2,3]) -> 2
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### arraySum
 
@@ -968,7 +968,7 @@ const arraySum = arr => arr.reduce((acc, val) => acc + val, 0);
 // arraySum([1,2,3,4]) -> 10
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### collatz
 
@@ -982,7 +982,7 @@ const collatz = n => (n % 2 == 0) ? (n / 2) : (3 * n + 1);
 // collatz(5) --> 16
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### collatz
 
@@ -995,7 +995,7 @@ const digitize = n => [...''+n].map(i => parseInt(i));
 // digitize(2334) -> [2, 3, 3, 4]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### digitize
 
@@ -1008,7 +1008,7 @@ const distance = (x0, y0, x1, y1) => Math.hypot(x1 - x0, y1 - y0);
 // distance(1,1, 2,3) -> 2.23606797749979
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### distance
 
@@ -1023,7 +1023,7 @@ n < 0 ? (() => { throw new TypeError('Negative numbers are not allowed!') })()
 // factorial(6) -> 720
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### fibonacci
 
@@ -1037,7 +1037,7 @@ Array(n).fill(0).reduce((acc, val, i) => acc.concat(i > 1 ? acc[i - 1] + acc[i -
 // fibonacci(5) -> [0,1,1,2,3]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### gcd
 
@@ -1050,7 +1050,7 @@ const gcd = (x, y) => !y ? x : gcd(y, x % y);
 // gcd (8, 36) -> 4
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### hammingDistance
 
@@ -1064,7 +1064,7 @@ const hammingDistance = (num1, num2) =>
 // hammingDistance(2,3) -> 1
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isDivisible
 
@@ -1077,7 +1077,7 @@ const isDivisible = (dividend, divisor) => dividend % divisor === 0;
 // isDivisible(6,3) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### iseven
 
@@ -1090,7 +1090,7 @@ const isEven = num => num % 2 === 0;
 // isEven(3) -> false
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### lcm
 
@@ -1106,7 +1106,7 @@ return Math.abs(x*y)/(gcd(x,y));
 // lcm(12,7) -> 84
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### median
 
@@ -1123,7 +1123,7 @@ return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
 // median([0,10,-2,7]) -> 3.5
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### palindrome
 
@@ -1139,7 +1139,7 @@ return s === s.split('').reverse().join('');
 // palindrome('taco cat') -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### percentile
 
@@ -1153,7 +1153,7 @@ const percentile = (arr, val) =>
 // percentile([1,2,3,4,5,6,7,8,9,10], 6) -> 55
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### powerset
 
@@ -1167,7 +1167,7 @@ arr.reduce((a, v) => a.concat(a.map(r => [v].concat(r))), [[]]);
 // powerset([1,2]) -> [[], [1], [2], [2,1]]
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### randomIntegerInRange
 
@@ -1180,7 +1180,7 @@ const randomIntegerInRange = (min, max) => Math.floor(Math.random() * (max - min
 // randomIntegerInRange(0, 5) -> 2
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### randomNumberInRange
 
@@ -1193,7 +1193,7 @@ const randomNumberInRange = (min, max) => Math.random() * (max - min) + min;
 // randomNumberInRange(2,10) -> 6.0211363285087005
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### round
 
@@ -1206,7 +1206,7 @@ const round = (n, decimals=0) => Number(`${Math.round(`${n}e${decimals}`)}e-${de
 // round(1.005, 2) -> 1.01
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### standardDeviation
 
@@ -1228,7 +1228,7 @@ arr.reduce((acc, val) => acc.concat(Math.pow(val - mean, 2)), [])
 
 ## 媒体
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### speechSynthesis
 
@@ -1247,7 +1247,7 @@ window.speechSynthesis.speak(msg);
 
 ## 节点
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### JSONToFile
 
@@ -1261,7 +1261,7 @@ const JSONToFile = (obj, filename) => fs.writeFile(`${filename}.json`, JSON.stri
 // JSONToFile({test: "is passed"}, 'testJsonFile') -> writes the object to 'testJsonFile.json'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### readFileLines
 
@@ -1285,7 +1285,7 @@ console.log(arr) // -> ['line1', 'line2', 'line3']
 
 ## 对象
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### cleanObj
 
@@ -1310,7 +1310,7 @@ delete obj[key];
 */
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### objectFromPairs
 
@@ -1323,7 +1323,7 @@ const objectFromPairs = arr => arr.reduce((a, v) => (a[v[0]] = v[1], a), {});
 // objectFromPairs([['a',1],['b',2]]) -> {a: 1, b: 2}
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### objectToPairs
 
@@ -1336,7 +1336,7 @@ const objectToPairs = obj => Object.keys(obj).map(k => [k, obj[k]]);
 // objectToPairs({a: 1, b: 2}) -> [['a',1],['b',2]])
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### shallowClone
 
@@ -1353,7 +1353,7 @@ a === b -> false
 */
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### truthCheckCollection
 
@@ -1368,7 +1368,7 @@ truthCheckCollection = (collection, pre) => (collection.every(obj => obj[pre]));
 
 ## 字符串
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### anagrams
 
@@ -1385,7 +1385,7 @@ acc.concat(anagrams(str.slice(0, i) + str.slice(i + 1)).map(val => letter + val)
 // anagrams('abc') -> ['abc','acb','bac','bca','cab','cba']
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### Capitalize
 
@@ -1400,7 +1400,7 @@ first.toUpperCase() + (lowerRest ? rest.join('').toLowerCase() : rest.join(''));
 // capitalize('myName', true) -> 'Myname'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### capitalizeEveryWord
 
@@ -1413,7 +1413,7 @@ const capitalizeEveryWord = str => str.replace(/\b[a-z]/g, char => char.toUpperC
 // capitalizeEveryWord('hello world!') -> 'Hello World!'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### escapeRegExp
 
@@ -1426,7 +1426,7 @@ const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 // escapeRegExp('(test)') -> \\(test\\)
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### fromCamelCase
 
@@ -1443,7 +1443,7 @@ str.replace(/([a-z\d])([A-Z])/g, '$1' + separator + '$2')
 // fromCamelCase('someJavascriptProperty', '_') -> 'some_javascript_property'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### reverseString
 
@@ -1456,7 +1456,7 @@ const reverseString = str => [...str].reverse().join('');
 // reverseString('foobar') -> 'raboof'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### sortCharactersInString
 
@@ -1470,7 +1470,7 @@ str.split('').sort((a, b) => a.localeCompare(b)).join('');
 // sortCharactersInString('cabbage') -> 'aabbceg'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### toCamelCase
 
@@ -1487,7 +1487,7 @@ str.replace(/^([A-Z])|[\s-_]+(\w)/g, (match, p1, p2, offset) =>  p2 ? p2.toUpper
 // toCamelCase("some-mixed_string with spaces_underscores-and-hyphens") -> 'someMixedStringWithSpacesUnderscoresAndHyphens'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### truncateString
 
@@ -1503,7 +1503,7 @@ str.length > num ? str.slice(0, num > 3 ? num - 3 : num) + '...' : str;
 
 ## 实用
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### coalesce
 
@@ -1516,7 +1516,7 @@ const coalesce = (...args) => args.find(_ => ![undefined, null].includes(_))
 // coalesce(null,undefined,"",NaN, "Waldo") -> ""
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### coalesceFactory
 
@@ -1530,7 +1530,7 @@ const coalesceFactory = valid => (...args) => args.find(valid);
 // customCoalesce(undefined, null, NaN, "", "Waldo") //-> "Waldo"
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### extendHex
 
@@ -1545,7 +1545,7 @@ const extendHex = shortHex =>
 // extendHex('05a') -> '#0055aa'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### gettype
 
@@ -1559,7 +1559,7 @@ v === undefined ? 'undefined' : v === null ? 'null' : v.constructor.name.toLower
 // getType(new Set([1,2,3])) -> "set"
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### hexToRGB
 
@@ -1578,7 +1578,7 @@ return `rgb(${parseInt(extendedHex.slice(1), 16) >> 16}, ${(parseInt(extendedHex
 // hexToRgb('#acd') -> 'rgb(170, 204, 221)'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isArray
 
@@ -1592,7 +1592,7 @@ const isArray = val => !!val && Array.isArray(val);
 // isArray([1]) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isBoolean
 
@@ -1606,7 +1606,7 @@ const isBoolean = val => typeof val === 'boolean';
 // isBoolean(false) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isFunction
 
@@ -1620,7 +1620,7 @@ const isFunction = val => val && typeof val === 'function';
 // isFunction(x => x) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isNumber
 
@@ -1634,7 +1634,7 @@ const isNumber = val => typeof val === 'number';
 // isNumber(1) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isString
 
@@ -1648,7 +1648,7 @@ const isString = val => typeof val === 'string';
 // isString('10') -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### isSymbol
 
@@ -1662,7 +1662,7 @@ const isSymbol = val => typeof val === 'symbol';
 // isSymbol(Symbol('x')) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### RGBToHex
 
@@ -1675,7 +1675,7 @@ const RGBToHex = (r, g, b) => ((r << 16) + (g << 8) + b).toString(16).padStart(6
 // RGBToHex(255, 165, 1) -> 'ffa501'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### timeTaken
 
@@ -1692,7 +1692,7 @@ console.timeEnd('timeTaken');  return r;
 // (logged): timeTaken: 0.02099609375ms
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### toOrdinalSuffix
 
@@ -1710,7 +1710,7 @@ return oPattern.includes(digits[0]) && !tPattern.includes(digits[1]) ? int + ord
 // toOrdinalSuffix("123") -> "123rd"
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### UUIDGenerator
 
@@ -1726,7 +1726,7 @@ const UUIDGenerator = () =>
 // UUIDGenerator() -> '7982fcfe-5721-4632-bede-6000885be57d'
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### validateEmail
 
@@ -1740,7 +1740,7 @@ const validateEmail = str =>
 // validateEmail(mymail@gmail.com) -> true
 ```
 
-[⬆ 返回顶部](#table-of-contents)
+[⬆ 返回顶部](#内容目录)
 
 ### validateNumber
 
